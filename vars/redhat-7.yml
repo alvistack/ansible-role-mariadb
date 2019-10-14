@@ -1,0 +1,70 @@
+---
+
+# (c) Wong Hoi Sing Edison <hswong3i@pantarei-design.com>
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+_rpm_key:
+  - { state: "present", key: "https://yum.mariadb.org/RPM-GPG-KEY-MariaDB" }
+
+_repository:
+  "10.4":
+    - file: "mariadb"
+      name: "mariadb"
+      description: "MariaDB"
+      baseurl: "http://yum.mariadb.org/10.4/rhel7-amd64"
+      gpgcheck: true
+      enabled: true
+      state: "present"
+  "10.3":
+    - file: "mariadb"
+      name: "mariadb"
+      description: "MariaDB"
+      baseurl: "http://yum.mariadb.org/10.3/rhel7-amd64"
+      gpgcheck: true
+      enabled: true
+      state: "present"
+  "10.2":
+    - file: "mariadb"
+      name: "mariadb"
+      description: "MariaDB"
+      baseurl: "http://yum.mariadb.org/10.2/rhel7-amd64"
+      gpgcheck: true
+      enabled: true
+      state: "present"
+  "10.1":
+    - file: "mariadb"
+      name: "mariadb"
+      description: "MariaDB"
+      baseurl: "http://yum.mariadb.org/10.1/rhel7-amd64"
+      gpgcheck: true
+      enabled: true
+      state: "present"
+
+_package:
+  "10.4":
+    - { state: "latest", name: "MariaDB-server" }
+    - { state: "latest", name: "MariaDB-backup" }
+    - { state: "latest", name: "socat" }
+  "10.3":
+    - { state: "latest", name: "MariaDB-server" }
+    - { state: "latest", name: "MariaDB-backup" }
+    - { state: "latest", name: "socat" }
+  "10.2":
+    - { state: "latest", name: "MariaDB-server" }
+    - { state: "latest", name: "MariaDB-backup" }
+    - { state: "latest", name: "socat" }
+  "10.1":
+    - { state: "latest", name: "MariaDB-server" }
+    - { state: "latest", name: "MariaDB-backup" }
+    - { state: "latest", name: "socat" }
