@@ -29,18 +29,26 @@ _repository:
 
 _package:
   "10.4":
+    - { state: "latest", name: "pwgen" }
+    - { state: "latest", name: "socat" }
+    - { state: "latest", name: "tzdata" }
     - { state: "latest", name: "mariadb-server" }
     - { state: "latest", name: "mariadb-backup" }
-    - { state: "latest", name: "socat" }
   "10.3":
+    - { state: "latest", name: "pwgen" }
+    - { state: "latest", name: "socat" }
+    - { state: "latest", name: "tzdata" }
     - { state: "latest", name: "mariadb-server" }
     - { state: "latest", name: "mariadb-backup" }
-    - { state: "latest", name: "socat" }
   "10.2":
+    - { state: "latest", name: "pwgen" }
+    - { state: "latest", name: "socat" }
+    - { state: "latest", name: "tzdata" }
     - { state: "latest", name: "mariadb-server" }
     - { state: "latest", name: "mariadb-backup" }
-    - { state: "latest", name: "socat" }
   "10.1":
+    - { state: "latest", name: "pwgen" }
+    - { state: "latest", name: "socat" }
+    - { state: "latest", name: "tzdata" }
     - { state: "latest", name: "mariadb-server" }
     - { state: "latest", name: "mariadb-backup" }
-    - { state: "latest", name: "socat" }

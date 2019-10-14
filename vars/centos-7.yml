@@ -53,18 +53,26 @@ _repository:
 
 _package:
   "10.4":
+    - { state: "latest", name: "pwgen" }
+    - { state: "latest", name: "socat" }
+    - { state: "latest", name: "tzdata" }
     - { state: "latest", name: "MariaDB-server" }
     - { state: "latest", name: "MariaDB-backup" }
-    - { state: "latest", name: "socat" }
   "10.3":
+    - { state: "latest", name: "pwgen" }
+    - { state: "latest", name: "socat" }
+    - { state: "latest", name: "tzdata" }
     - { state: "latest", name: "MariaDB-server" }
     - { state: "latest", name: "MariaDB-backup" }
-    - { state: "latest", name: "socat" }
   "10.2":
+    - { state: "latest", name: "pwgen" }
+    - { state: "latest", name: "socat" }
+    - { state: "latest", name: "tzdata" }
     - { state: "latest", name: "MariaDB-server" }
     - { state: "latest", name: "MariaDB-backup" }
-    - { state: "latest", name: "socat" }
   "10.1":
+    - { state: "latest", name: "pwgen" }
+    - { state: "latest", name: "socat" }
+    - { state: "latest", name: "tzdata" }
     - { state: "latest", name: "MariaDB-server" }
     - { state: "latest", name: "MariaDB-backup" }
-    - { state: "latest", name: "socat" }
