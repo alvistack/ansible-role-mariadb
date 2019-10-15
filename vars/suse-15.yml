@@ -37,46 +37,22 @@ _repository:
 
 _package:
   "10.4":
-    - { state: "latest", name: "ca-certificates" }
-    - { state: "latest", name: "ca-certificates-cacert" }
-    - { state: "latest", name: "ca-certificates-mozilla" }
-    - { state: "latest", name: "ca-certificates-steamtricks" }
-    - { state: "latest", name: "pwgen" }
     - { state: "latest", name: "socat" }
     - { state: "latest", name: "timezone" }
-    - { state: "latest", name: "wget" }
     - { state: "latest", name: "MariaDB-server" }
     - { state: "latest", name: "MariaDB-backup" }
   "10.3":
-    - { state: "latest", name: "ca-certificates" }
-    - { state: "latest", name: "ca-certificates-cacert" }
-    - { state: "latest", name: "ca-certificates-mozilla" }
-    - { state: "latest", name: "ca-certificates-steamtricks" }
-    - { state: "latest", name: "pwgen" }
     - { state: "latest", name: "socat" }
     - { state: "latest", name: "timezone" }
-    - { state: "latest", name: "wget" }
     - { state: "latest", name: "MariaDB-server" }
     - { state: "latest", name: "MariaDB-backup" }
   "10.2":
-    - { state: "latest", name: "ca-certificates" }
-    - { state: "latest", name: "ca-certificates-cacert" }
-    - { state: "latest", name: "ca-certificates-mozilla" }
-    - { state: "latest", name: "ca-certificates-steamtricks" }
-    - { state: "latest", name: "pwgen" }
     - { state: "latest", name: "socat" }
     - { state: "latest", name: "timezone" }
-    - { state: "latest", name: "wget" }
     - { state: "latest", name: "MariaDB-server" }
     - { state: "latest", name: "MariaDB-backup" }
   "10.1":
-    - { state: "latest", name: "ca-certificates" }
-    - { state: "latest", name: "ca-certificates-cacert" }
-    - { state: "latest", name: "ca-certificates-mozilla" }
-    - { state: "latest", name: "ca-certificates-steamtricks" }
-    - { state: "latest", name: "pwgen" }
     - { state: "latest", name: "socat" }
     - { state: "latest", name: "timezone" }
-    - { state: "latest", name: "wget" }
     - { state: "latest", name: "MariaDB-server" }
     - { state: "latest", name: "MariaDB-backup" }
