@@ -42,9 +42,9 @@ _package:
     - { state: "latest", name: "socat" }
     - { state: "latest", name: "tzdata" }
     - { state: "latest", name: "mariadb-server" }
-    - { state: "latest", name: "mariadb-backup" }
+    - { state: "latest", name: "mariadb-backup-10.2" }
   "10.1":
     - { state: "latest", name: "socat" }
     - { state: "latest", name: "tzdata" }
     - { state: "latest", name: "mariadb-server" }
-    - { state: "latest", name: "mariadb-backup" }
+    - { state: "latest", name: "mariadb-backup-10.1" }
