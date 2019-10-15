@@ -17,6 +17,9 @@
 _rpm_key:
   - { state: "present", key: "https://yum.mariadb.org/RPM-GPG-KEY-MariaDB" }
 
+_yum_repository:
+  - { state: "latest", name: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm" }
+
 _repository:
   "10.4":
     - file: "mariadb"

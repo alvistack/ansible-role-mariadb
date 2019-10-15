@@ -43,7 +43,7 @@ _package:
     - { state: "latest", name: "ca-certificates-steamtricks" }
     - { state: "latest", name: "pwgen" }
     - { state: "latest", name: "socat" }
-    - { state: "latest", name: "tzdata" }
+    - { state: "latest", name: "timezone" }
     - { state: "latest", name: "wget" }
     - { state: "latest", name: "MariaDB-server" }
     - { state: "latest", name: "MariaDB-backup" }
@@ -54,7 +54,7 @@ _package:
     - { state: "latest", name: "ca-certificates-steamtricks" }
     - { state: "latest", name: "pwgen" }
     - { state: "latest", name: "socat" }
-    - { state: "latest", name: "tzdata" }
+    - { state: "latest", name: "timezone" }
     - { state: "latest", name: "wget" }
     - { state: "latest", name: "MariaDB-server" }
     - { state: "latest", name: "MariaDB-backup" }
@@ -65,7 +65,7 @@ _package:
     - { state: "latest", name: "ca-certificates-steamtricks" }
     - { state: "latest", name: "pwgen" }
     - { state: "latest", name: "socat" }
-    - { state: "latest", name: "tzdata" }
+    - { state: "latest", name: "timezone" }
     - { state: "latest", name: "wget" }
     - { state: "latest", name: "MariaDB-server" }
     - { state: "latest", name: "MariaDB-backup" }
@@ -76,7 +76,7 @@ _package:
     - { state: "latest", name: "ca-certificates-steamtricks" }
     - { state: "latest", name: "pwgen" }
     - { state: "latest", name: "socat" }
-    - { state: "latest", name: "tzdata" }
+    - { state: "latest", name: "timezone" }
     - { state: "latest", name: "wget" }
     - { state: "latest", name: "MariaDB-server" }
     - { state: "latest", name: "MariaDB-backup" }

@@ -32,6 +32,17 @@
   tags: mariadb
 
 - name: yum-config-manager --add-repo
+  yum:
+    name: "{{ item.name }}"
+    state: "{{ item.state }}"
+  loop: "{{ _yum_repository }}"
+  register: result
+  until: result is succeeded
+  changed_when: false
+  ignore_errors: true
+  tags: mariadb
+
+- name: yum-config-manager --add-repo
   yum_repository:
     file: "{{ item.file }}"
     name: "{{ item.name }}"
