@@ -24,8 +24,6 @@ _repository:
     - { state: "present", repo: "deb http://ftp.osuosl.org/pub/mariadb/repo/10.3/ubuntu xenial main" }
   "10.2":
     - { state: "present", repo: "deb http://ftp.osuosl.org/pub/mariadb/repo/10.2/ubuntu xenial main" }
-  "10.1":
-    - { state: "present", repo: "deb http://ftp.osuosl.org/pub/mariadb/repo/10.1/ubuntu xenial main" }
 
 _package:
   "10.4":
@@ -37,6 +35,3 @@ _package:
   "10.2":
     - { state: "latest", name: "mariadb-server" }
     - { state: "latest", name: "mariadb-backup-10.2" }
-  "10.1":
-    - { state: "latest", name: "mariadb-server" }
-    - { state: "latest", name: "mariadb-backup-10.1" }
