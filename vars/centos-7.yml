@@ -42,14 +42,6 @@ _repository:
       gpgcheck: true
       enabled: true
       state: "present"
-  "10.1":
-    - file: "mariadb"
-      name: "mariadb"
-      description: "MariaDB"
-      baseurl: "http://yum.mariadb.org/10.1/centos7-amd64"
-      gpgcheck: true
-      enabled: true
-      state: "present"
 
 _package:
   "10.4":
@@ -59,8 +51,5 @@ _package:
     - { state: "latest", name: "MariaDB-server" }
     - { state: "latest", name: "MariaDB-backup" }
   "10.2":
-    - { state: "latest", name: "MariaDB-server" }
-    - { state: "latest", name: "MariaDB-backup" }
-  "10.1":
     - { state: "latest", name: "MariaDB-server" }
     - { state: "latest", name: "MariaDB-backup" }

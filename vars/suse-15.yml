@@ -30,10 +30,6 @@ _repository:
     - name: "mariadb"
       repo: "https://yum.mariadb.org/10.2/opensuse/15/x86_64"
       state: "present"
-  "10.1":
-    - name: "mariadb"
-      repo: "https://yum.mariadb.org/10.1/opensuse/15/x86_64"
-      state: "present"
 
 _package:
   "10.4":
@@ -43,8 +39,5 @@ _package:
     - { state: "latest", name: "MariaDB-server" }
     - { state: "latest", name: "MariaDB-backup" }
   "10.2":
-    - { state: "latest", name: "MariaDB-server" }
-    - { state: "latest", name: "MariaDB-backup" }
-  "10.1":
     - { state: "latest", name: "MariaDB-server" }
     - { state: "latest", name: "MariaDB-backup" }
