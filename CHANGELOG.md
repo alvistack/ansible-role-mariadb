@@ -4,6 +4,8 @@
 
 ### Major Changes
 
+  - Force reinstall `mysql-common` if required
+
 ## 4.0.0 - 2019-11-05
 
 ### Major Changes
