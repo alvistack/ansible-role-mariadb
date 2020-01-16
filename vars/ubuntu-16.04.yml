@@ -17,17 +17,6 @@
 _apt_key:
   - { state: "present", id: "C74CD1D8", keyserver: "ha.pool.sks-keyservers.net" }
 
-_debconf:
-  "10.4":
-    - { name: "mariadb-server-10.4", question: "mysql-server/root_password", vtype: "password", value: "unused" }
-    - { name: "mariadb-server-10.4", question: "mysql-server/root_password_again", vtype: "password", value: "unused" }
-  "10.3":
-    - { name: "mariadb-server-10.3", question: "mysql-server/root_password", vtype: "password", value: "unused" }
-    - { name: "mariadb-server-10.3", question: "mysql-server/root_password_again", vtype: "password", value: "unused" }
-  "10.2":
-    - { name: "mariadb-server-10.2", question: "mysql-server/root_password", vtype: "password", value: "unused" }
-    - { name: "mariadb-server-10.2", question: "mysql-server/root_password_again", vtype: "password", value: "unused" }
-
 _repository:
   "10.4":
     - { state: "present", repo: "deb http://ftp.osuosl.org/pub/mariadb/repo/10.4/ubuntu xenial main" }

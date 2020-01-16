@@ -15,23 +15,9 @@
 # limitations under the License.
 
 - name: dpkg --purge --force-depends mysql-common
-  shell: |
-    set -o pipefail
-    test -f /etc/mysql/my.cnf.fallback && dpkg --purge --force-depends mysql-common || exit 0
+  command: dpkg --purge --force-depends mysql-common
   args:
-    executable: "/bin/bash"
-  register: result
-  until: result is succeeded
-  changed_when: result is not succeeded
-  tags: mariadb
-
-- name: debconf-set-selections
-  debconf:
-    name: "{{ item.name }}"
-    question: "{{ item.question }}"
-    vtype: "{{ item.vtype }}"
-    value: "{{ item.value }}"
-  loop: "{{ _debconf[mariadb_release] }}"
+    removes: "/etc/mysql/my.cnf.fallback"
   register: result
   until: result is succeeded
   changed_when: result is not succeeded
