@@ -33,8 +33,7 @@
 
 - name: apt-key add
   apt_key:
-    keyserver: "{{ item.keyserver }}"
-    id: "{{ item.id }}"
+    url: "{{ item.url }}"
     state: "{{ item.state }}"
   loop: "{{ _apt_key }}"
   register: result

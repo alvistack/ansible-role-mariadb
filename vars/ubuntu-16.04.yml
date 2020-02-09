@@ -15,7 +15,7 @@
 # limitations under the License.
 
 _apt_key:
-  - { state: "present", id: "C74CD1D8", keyserver: "ha.pool.sks-keyservers.net" }
+  - { state: "present", url: "https://mariadb.org/mariadb_release_signing_key.asc" }
 
 _repository:
   "10.4":
