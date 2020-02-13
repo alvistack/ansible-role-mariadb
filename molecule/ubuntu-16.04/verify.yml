@@ -17,9 +17,8 @@
 - hosts: all
   remote_user: root
   become: true
-  roles:
-    - role: bootstrap
-    - role: python
-    - role: locales
-    - role: timezone
-    - role: mariadb
+  post_tasks:
+    - name: mariadb --version
+      command: mariadb --version
+      register: result
+      changed_when: result is not succeeded
