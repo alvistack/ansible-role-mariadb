@@ -19,11 +19,11 @@ _apt_key:
 
 _repository:
   "10.4":
-    - { state: "present", repo: "deb http://ftp.osuosl.org/pub/mariadb/repo/10.4/ubuntu bionic main" }
+    - { state: "present", repo: "deb http://ftp.osuosl.org/pub/mariadb/repo/10.4/ubuntu eoan main" }
   "10.3":
-    - { state: "present", repo: "deb http://ftp.osuosl.org/pub/mariadb/repo/10.3/ubuntu bionic main" }
+    - { state: "present", repo: "deb http://ftp.osuosl.org/pub/mariadb/repo/10.3/ubuntu eoan main" }
   "10.2":
-    - { state: "present", repo: "deb http://ftp.osuosl.org/pub/mariadb/repo/10.2/ubuntu bionic main" }
+    - { state: "present", repo: "deb http://ftp.osuosl.org/pub/mariadb/repo/10.2/ubuntu eoan main" }
 
 _package:
   "10.4":

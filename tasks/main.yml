@@ -48,6 +48,10 @@
   ignore_errors: true
   tags: mariadb
 
+- name: flush handlers
+  meta: flush_handlers
+  tags: mariadb
+
 - name: enable service
   service:
     name: "mariadb"
@@ -55,8 +59,4 @@
     enabled: true
   changed_when: false
   ignore_errors: true
-  tags: mariadb
-
-- name: flush handlers
-  meta: flush_handlers
   tags: mariadb
