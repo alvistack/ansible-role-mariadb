@@ -45,6 +45,8 @@
     repo: "{{ item.repo }}"
     state: "{{ item.state }}"
   loop: "{{ mariadb_repository }}"
+  register: result
+  until: result is succeeded
   tags: mariadb
 
 - name: apt-get install
