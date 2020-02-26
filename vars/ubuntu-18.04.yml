@@ -15,15 +15,20 @@
 # limitations under the License.
 
 _apt_key:
-  - { state: "present", url: "https://mariadb.org/mariadb_release_signing_key.asc" }
+  - url: "https://mariadb.org/mariadb_release_signing_key.asc"
+    id: "177F4010FE56CA3336300305F1656F24C74CD1D8"
+    state: "present"
 
 _repository:
   "10.4":
-    - { state: "present", repo: "deb http://ftp.osuosl.org/pub/mariadb/repo/10.4/ubuntu bionic main" }
+    - repo: "deb http://ftp.osuosl.org/pub/mariadb/repo/10.4/ubuntu bionic main"
+      state: "present"
   "10.3":
-    - { state: "present", repo: "deb http://ftp.osuosl.org/pub/mariadb/repo/10.3/ubuntu bionic main" }
+    - repo: "deb http://ftp.osuosl.org/pub/mariadb/repo/10.3/ubuntu bionic main"
+      state: "present"
   "10.2":
-    - { state: "present", repo: "deb http://ftp.osuosl.org/pub/mariadb/repo/10.2/ubuntu bionic main" }
+    - repo: "deb http://ftp.osuosl.org/pub/mariadb/repo/10.2/ubuntu bionic main"
+      state: "present"
 
 _package:
   "10.4":

@@ -52,7 +52,7 @@
   meta: flush_handlers
   tags: mariadb
 
-- name: enable service
+- name: start service
   service:
     name: "mariadb"
     state: "started"
