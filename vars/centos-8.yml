@@ -24,7 +24,7 @@ _repository:
     - file: "mariadb"
       name: "mariadb"
       description: "MariaDB"
-      baseurl: "http://yum.mariadb.org/10.4/centos7-amd64"
+      baseurl: "http://yum.mariadb.org/10.4/centos8-amd64"
       gpgcheck: true
       enabled: true
       state: "present"
@@ -32,29 +32,19 @@ _repository:
     - file: "mariadb"
       name: "mariadb"
       description: "MariaDB"
-      baseurl: "http://yum.mariadb.org/10.3/centos7-amd64"
+      baseurl: "http://yum.mariadb.org/10.3/centos8-amd64"
       gpgcheck: true
       enabled: true
       state: "present"
-  "10.2":
-    - file: "mariadb"
-      name: "mariadb"
-      description: "MariaDB"
-      baseurl: "http://yum.mariadb.org/10.2/centos7-amd64"
-      gpgcheck: true
-      enabled: true
-      state: "present"
+  "10.2": []
 
 _package:
   "10.4":
     - { state: "latest", name: "boost-devel" }
-    - { state: "latest", name: "MariaDB-server" }
-    - { state: "latest", name: "MariaDB-backup" }
+    - { state: "latest", name: "MariaDB-server", disablerepo: "AppStream" }
+    - { state: "latest", name: "MariaDB-backup", disablerepo: "AppStream" }
   "10.3":
     - { state: "latest", name: "boost-devel" }
-    - { state: "latest", name: "MariaDB-server" }
-    - { state: "latest", name: "MariaDB-backup" }
-  "10.2":
-    - { state: "latest", name: "boost-devel" }
-    - { state: "latest", name: "MariaDB-server" }
-    - { state: "latest", name: "MariaDB-backup" }
+    - { state: "latest", name: "MariaDB-server", disablerepo: "AppStream" }
+    - { state: "latest", name: "MariaDB-backup", disablerepo: "AppStream" }
+  "10.2": []
