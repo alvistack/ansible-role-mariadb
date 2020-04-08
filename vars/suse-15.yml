@@ -19,7 +19,7 @@ _rpm_key:
     fingerprint: "199369E5404BD5FC7D2FE43BCBCB082A1BB943DB"
     state: "present"
 
-_repository:
+_zypper_repository:
   "10.4":
     - name: "mariadb"
       repo: "https://yum.mariadb.org/10.4/opensuse/15/x86_64"
@@ -33,7 +33,7 @@ _repository:
       repo: "https://yum.mariadb.org/10.2/opensuse/15/x86_64"
       state: "present"
 
-_package:
+_zypper:
   "10.4":
     - { state: "latest", name: "MariaDB-server" }
     - { state: "latest", name: "MariaDB-backup" }

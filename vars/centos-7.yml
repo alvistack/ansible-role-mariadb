@@ -19,39 +19,45 @@ _rpm_key:
     fingerprint: "199369E5404BD5FC7D2FE43BCBCB082A1BB943DB"
     state: "present"
 
-_repository:
+_yum_repository:
   "10.4":
     - file: "mariadb"
       name: "mariadb"
       description: "MariaDB"
       baseurl: "http://yum.mariadb.org/10.4/centos7-amd64"
-      gpgcheck: true
       enabled: true
+      gpgcheck: true
+      gpgkey: "https://yum.mariadb.org/RPM-GPG-KEY-MariaDB"
       state: "present"
   "10.3":
     - file: "mariadb"
       name: "mariadb"
       description: "MariaDB"
       baseurl: "http://yum.mariadb.org/10.3/centos7-amd64"
-      gpgcheck: true
       enabled: true
+      gpgcheck: true
+      gpgkey: "https://yum.mariadb.org/RPM-GPG-KEY-MariaDB"
       state: "present"
   "10.2":
     - file: "mariadb"
       name: "mariadb"
       description: "MariaDB"
       baseurl: "http://yum.mariadb.org/10.2/centos7-amd64"
-      gpgcheck: true
       enabled: true
+      gpgcheck: true
+      gpgkey: "https://yum.mariadb.org/RPM-GPG-KEY-MariaDB"
       state: "present"
 
-_package:
+_yum:
   "10.4":
+    - { state: "latest", name: "boost-devel" }
     - { state: "latest", name: "MariaDB-server" }
     - { state: "latest", name: "MariaDB-backup" }
   "10.3":
+    - { state: "latest", name: "boost-devel" }
     - { state: "latest", name: "MariaDB-server" }
     - { state: "latest", name: "MariaDB-backup" }
   "10.2":
+    - { state: "latest", name: "boost-devel" }
     - { state: "latest", name: "MariaDB-server" }
     - { state: "latest", name: "MariaDB-backup" }
