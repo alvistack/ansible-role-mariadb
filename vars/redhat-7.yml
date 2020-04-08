@@ -47,11 +47,14 @@ _repository:
 
 _package:
   "10.4":
+    - { state: "latest", name: "boost-devel" }
     - { state: "latest", name: "MariaDB-server" }
     - { state: "latest", name: "MariaDB-backup" }
   "10.3":
+    - { state: "latest", name: "boost-devel" }
     - { state: "latest", name: "MariaDB-server" }
     - { state: "latest", name: "MariaDB-backup" }
   "10.2":
+    - { state: "latest", name: "boost-devel" }
     - { state: "latest", name: "MariaDB-server" }
     - { state: "latest", name: "MariaDB-backup" }
