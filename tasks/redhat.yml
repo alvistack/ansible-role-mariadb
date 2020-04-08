@@ -38,10 +38,11 @@
     name: "{{ item.name }}"
     description: "{{ item.description }}"
     baseurl: "{{ item.baseurl }}"
-    gpgcheck: "{{ item.gpgcheck }}"
     enabled: "{{ item.enabled }}"
+    gpgcheck: "{{ item.gpgcheck }}"
+    gpgkey: "{{ item.gpgkey }}"
     state: "{{ item.state }}"
-  loop: "{{ mariadb_repository }}"
+  loop: "{{ _yum_repository[mariadb_release] }}"
   tags: mariadb
 
 - name: yum install
@@ -49,7 +50,7 @@
     name: "{{ item.name }}"
     disablerepo: "{{ item.disablerepo | default(None) or omit }}"
     state: "{{ item.state | default(None) or omit }}"
-  loop: "{{ mariadb_package }}"
+  loop: "{{ _yum[mariadb_release] }}"
   register: result
   until: result is succeeded
   notify:

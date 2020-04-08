@@ -19,7 +19,7 @@ _apt_key:
     id: "177F4010FE56CA3336300305F1656F24C74CD1D8"
     state: "present"
 
-_repository:
+_apt_repository:
   "10.4":
     - repo: "deb http://ftp.osuosl.org/pub/mariadb/repo/10.4/ubuntu xenial main"
       state: "present"
@@ -30,7 +30,7 @@ _repository:
     - repo: "deb http://ftp.osuosl.org/pub/mariadb/repo/10.2/ubuntu xenial main"
       state: "present"
 
-_package:
+_apt:
   "10.4":
     - { state: "latest", name: "mysql-common" }
     - { state: "latest", name: "mariadb-server-10.4" }
