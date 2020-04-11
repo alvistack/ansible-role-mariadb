@@ -36,13 +36,11 @@ _apt_repository:
 
 _apt:
   "10.4":
-    - { state: "latest", name: "libboost-dev" }
     - { state: "latest", name: "mysql-common" }
     - { state: "latest", name: "mariadb-server-10.4" }
     - { state: "latest", name: "mariadb-backup" }
     - { state: "latest", name: "socat" }
   "10.3":
-    - { state: "latest", name: "libboost-dev" }
     - { state: "latest", name: "mysql-common" }
     - { state: "latest", name: "mariadb-server-10.3" }
     - { state: "latest", name: "mariadb-backup" }
