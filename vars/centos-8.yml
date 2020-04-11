@@ -15,9 +15,15 @@
 # limitations under the License.
 
 _rpm_key:
-  - key: "https://yum.mariadb.org/RPM-GPG-KEY-MariaDB"
-    fingerprint: "199369E5404BD5FC7D2FE43BCBCB082A1BB943DB"
-    state: "present"
+  "10.4":
+    - key: "https://yum.mariadb.org/RPM-GPG-KEY-MariaDB"
+      fingerprint: "199369E5404BD5FC7D2FE43BCBCB082A1BB943DB"
+      state: "present"
+  "10.3":
+    - key: "https://yum.mariadb.org/RPM-GPG-KEY-MariaDB"
+      fingerprint: "199369E5404BD5FC7D2FE43BCBCB082A1BB943DB"
+      state: "present"
+  "10.2": []
 
 _yum_repository:
   "10.4":
