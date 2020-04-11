@@ -32,7 +32,7 @@
     fingerprint: "{{ item.fingerprint }}"
     state: "{{ item.state }}"
     validate_certs: false
-  loop: "{{ _rpm_key }}"
+  loop: "{{ _rpm_key[mariadb_release] }}"
   register: result
   until: result is succeeded
   tags: mariadb
