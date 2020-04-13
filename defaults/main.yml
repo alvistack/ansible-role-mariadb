@@ -15,4 +15,4 @@
 # limitations under the License.
 
 # MariaDB release.
-mariadb_release: "10.4"
+mariadb_release: "10.5"

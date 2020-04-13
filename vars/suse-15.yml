@@ -15,6 +15,10 @@
 # limitations under the License.
 
 _rpm_key:
+  "10.5":
+    - key: "https://yum.mariadb.org/RPM-GPG-KEY-MariaDB"
+      fingerprint: "199369E5404BD5FC7D2FE43BCBCB082A1BB943DB"
+      state: "present"
   "10.4":
     - key: "https://yum.mariadb.org/RPM-GPG-KEY-MariaDB"
       fingerprint: "199369E5404BD5FC7D2FE43BCBCB082A1BB943DB"
@@ -23,12 +27,12 @@ _rpm_key:
     - key: "https://yum.mariadb.org/RPM-GPG-KEY-MariaDB"
       fingerprint: "199369E5404BD5FC7D2FE43BCBCB082A1BB943DB"
       state: "present"
-  "10.2":
-    - key: "https://yum.mariadb.org/RPM-GPG-KEY-MariaDB"
-      fingerprint: "199369E5404BD5FC7D2FE43BCBCB082A1BB943DB"
-      state: "present"
 
 _zypper_repository:
+  "10.5":
+    - name: "mariadb"
+      repo: "https://yum.mariadb.org/10.5/opensuse/15/x86_64"
+      state: "present"
   "10.4":
     - name: "mariadb"
       repo: "https://yum.mariadb.org/10.4/opensuse/15/x86_64"
@@ -37,21 +41,17 @@ _zypper_repository:
     - name: "mariadb"
       repo: "https://yum.mariadb.org/10.3/opensuse/15/x86_64"
       state: "present"
-  "10.2":
-    - name: "mariadb"
-      repo: "https://yum.mariadb.org/10.2/opensuse/15/x86_64"
-      state: "present"
 
 _zypper:
+  "10.5":
+    - { state: "latest", name: "boost-devel" }
+    - { state: "latest", name: "MariaDB-server" }
+    - { state: "latest", name: "MariaDB-backup" }
   "10.4":
     - { state: "latest", name: "boost-devel" }
     - { state: "latest", name: "MariaDB-server" }
     - { state: "latest", name: "MariaDB-backup" }
   "10.3":
-    - { state: "latest", name: "boost-devel" }
-    - { state: "latest", name: "MariaDB-server" }
-    - { state: "latest", name: "MariaDB-backup" }
-  "10.2":
     - { state: "latest", name: "boost-devel" }
     - { state: "latest", name: "MariaDB-server" }
     - { state: "latest", name: "MariaDB-backup" }
