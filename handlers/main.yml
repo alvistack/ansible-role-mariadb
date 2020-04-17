@@ -14,7 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-- name: mariadb | systemctl restart
+- name: mariadb | systemctl restart mariadb
   service:
     name: "mariadb"
     state: "restarted"
