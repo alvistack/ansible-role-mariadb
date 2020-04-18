@@ -52,7 +52,7 @@
   meta: flush_handlers
   tags: mariadb
 
-- name: start service
+- name: systemctl start mariadb
   service:
     name: "mariadb"
     state: "started"
