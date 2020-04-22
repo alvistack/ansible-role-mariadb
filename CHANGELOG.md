@@ -12,6 +12,8 @@
   - Migrate role name to lowercase or underline
   - Migrate group name to lowercase or underline
   - Migrate molecule `group_vars` to file
+  - Add MariaDB 10.5 support
+  - Remove MariaDB 10.2 support
 
 ## 4.2.0 - 2020-02-13
 

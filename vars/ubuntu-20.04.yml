@@ -15,6 +15,10 @@
 # limitations under the License.
 
 _apt_key:
+  "10.5":
+    - url: "https://mariadb.org/mariadb_release_signing_key.asc"
+      id: "177F4010FE56CA3336300305F1656F24C74CD1D8"
+      state: "present"
   "10.4":
     - url: "https://mariadb.org/mariadb_release_signing_key.asc"
       id: "177F4010FE56CA3336300305F1656F24C74CD1D8"
@@ -23,28 +27,31 @@ _apt_key:
     - url: "https://mariadb.org/mariadb_release_signing_key.asc"
       id: "177F4010FE56CA3336300305F1656F24C74CD1D8"
       state: "present"
-  "10.2": []
 
 _apt_repository:
+  "10.5":
+    - repo: "deb http://ftp.osuosl.org/pub/mariadb/repo/10.5/ubuntu eoan main"
+      state: "present"
   "10.4":
     - repo: "deb http://ftp.osuosl.org/pub/mariadb/repo/10.4/ubuntu eoan main"
       state: "present"
   "10.3":
     - repo: "deb http://ftp.osuosl.org/pub/mariadb/repo/10.3/ubuntu eoan main"
       state: "present"
-  "10.2": []
 
 _apt:
+  "10.5":
+    - { state: "latest", name: "mysql-common" }
+    - { state: "latest", name: "mariadb-server-10.5" }
+    - { state: "latest", name: "mariadb-backup" }
+    - { state: "latest", name: "socat" }
   "10.4":
-    - { state: "latest", name: "libboost-dev" }
     - { state: "latest", name: "mysql-common" }
     - { state: "latest", name: "mariadb-server-10.4" }
     - { state: "latest", name: "mariadb-backup" }
     - { state: "latest", name: "socat" }
   "10.3":
-    - { state: "latest", name: "libboost-dev" }
     - { state: "latest", name: "mysql-common" }
     - { state: "latest", name: "mariadb-server-10.3" }
     - { state: "latest", name: "mariadb-backup" }
     - { state: "latest", name: "socat" }
-  "10.2": []

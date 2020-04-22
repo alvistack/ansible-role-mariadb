@@ -58,5 +58,5 @@
   register: result
   until: result is succeeded
   notify:
-    - mariadb | systemctl restart
+    - mariadb | systemctl restart mariadb
   tags: mariadb

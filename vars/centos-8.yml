@@ -15,6 +15,10 @@
 # limitations under the License.
 
 _rpm_key:
+  "10.5":
+    - key: "https://yum.mariadb.org/RPM-GPG-KEY-MariaDB"
+      fingerprint: "199369E5404BD5FC7D2FE43BCBCB082A1BB943DB"
+      state: "present"
   "10.4":
     - key: "https://yum.mariadb.org/RPM-GPG-KEY-MariaDB"
       fingerprint: "199369E5404BD5FC7D2FE43BCBCB082A1BB943DB"
@@ -23,9 +27,17 @@ _rpm_key:
     - key: "https://yum.mariadb.org/RPM-GPG-KEY-MariaDB"
       fingerprint: "199369E5404BD5FC7D2FE43BCBCB082A1BB943DB"
       state: "present"
-  "10.2": []
 
 _yum_repository:
+  "10.5":
+    - file: "mariadb"
+      name: "mariadb"
+      description: "MariaDB"
+      baseurl: "http://yum.mariadb.org/10.5/centos8-amd64"
+      enabled: true
+      gpgcheck: true
+      gpgkey: "https://yum.mariadb.org/RPM-GPG-KEY-MariaDB"
+      state: "present"
   "10.4":
     - file: "mariadb"
       name: "mariadb"
@@ -44,9 +56,12 @@ _yum_repository:
       gpgcheck: true
       gpgkey: "https://yum.mariadb.org/RPM-GPG-KEY-MariaDB"
       state: "present"
-  "10.2": []
 
 _yum:
+  "10.5":
+    - { state: "latest", name: "boost-devel" }
+    - { state: "latest", name: "MariaDB-server", disablerepo: "AppStream" }
+    - { state: "latest", name: "MariaDB-backup", disablerepo: "AppStream" }
   "10.4":
     - { state: "latest", name: "boost-devel" }
     - { state: "latest", name: "MariaDB-server", disablerepo: "AppStream" }
@@ -55,4 +70,3 @@ _yum:
     - { state: "latest", name: "boost-devel" }
     - { state: "latest", name: "MariaDB-server", disablerepo: "AppStream" }
     - { state: "latest", name: "MariaDB-backup", disablerepo: "AppStream" }
-  "10.2": []
