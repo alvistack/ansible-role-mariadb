@@ -33,7 +33,7 @@ _yum_repository:
     - file: "mariadb"
       name: "mariadb"
       description: "MariaDB"
-      baseurl: "http://yum.mariadb.org/10.5/fedora31-amd64"
+      baseurl: "http://yum.mariadb.org/10.5/fedora30-amd64"
       enabled: true
       gpgcheck: true
       gpgkey: "https://yum.mariadb.org/RPM-GPG-KEY-MariaDB"
@@ -42,7 +42,7 @@ _yum_repository:
     - file: "mariadb"
       name: "mariadb"
       description: "MariaDB"
-      baseurl: "http://yum.mariadb.org/10.4/fedora31-amd64"
+      baseurl: "http://yum.mariadb.org/10.4/fedora30-amd64"
       enabled: true
       gpgcheck: true
       gpgkey: "https://yum.mariadb.org/RPM-GPG-KEY-MariaDB"
@@ -51,7 +51,7 @@ _yum_repository:
     - file: "mariadb"
       name: "mariadb"
       description: "MariaDB"
-      baseurl: "http://yum.mariadb.org/10.3/fedora31-amd64"
+      baseurl: "http://yum.mariadb.org/10.3/fedora30-amd64"
       enabled: true
       gpgcheck: true
       gpgkey: "https://yum.mariadb.org/RPM-GPG-KEY-MariaDB"
