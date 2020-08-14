@@ -14,20 +14,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-_rpm_key:
-  "10.5":
-    - key: "https://yum.mariadb.org/RPM-GPG-KEY-MariaDB"
-      fingerprint: "199369E5404BD5FC7D2FE43BCBCB082A1BB943DB"
-      state: "present"
-  "10.4":
-    - key: "https://yum.mariadb.org/RPM-GPG-KEY-MariaDB"
-      fingerprint: "199369E5404BD5FC7D2FE43BCBCB082A1BB943DB"
-      state: "present"
-  "10.3":
-    - key: "https://yum.mariadb.org/RPM-GPG-KEY-MariaDB"
-      fingerprint: "199369E5404BD5FC7D2FE43BCBCB082A1BB943DB"
-      state: "present"
-
 _zypper_repository:
   "10.5":
     - name: "mariadb"
