@@ -14,9 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-- name: mariadb | systemctl restart mariadb
+- name: mariadb | systemctl restart mariadb.service
   service:
-    name: "mariadb"
+    name: "mariadb.service"
     state: "restarted"
     enabled: true
   loop: "{{ ansible_play_hosts }}"
