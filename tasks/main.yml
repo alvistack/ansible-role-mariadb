@@ -48,9 +48,9 @@
   ignore_errors: true
   tags: mariadb
 
-- name: systemctl start mariadb
+- name: systemctl start mariadb.service
   service:
-    name: "mariadb"
+    name: "mariadb.service"
     state: "started"
     enabled: true
   changed_when: false
