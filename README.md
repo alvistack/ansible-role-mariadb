@@ -1,7 +1,7 @@
 # Ansible Role for MariaDB
 
 [![Travis](https://img.shields.io/travis/com/alvistack/ansible-role-mariadb.svg)](https://travis-ci.com/alvistack/ansible-role-mariadb)
-[![GitHub release](https://img.shields.io/github/release/alvistack/ansible-role-mariadb.svg)](https://github.com/alvistack/ansible-role-mariadb)
+[![GitHub release](https://img.shields.io/github/release/alvistack/ansible-role-mariadb.svg)](https://github.com/alvistack/ansible-role-mariadb/releases)
 [![GitHub license](https://img.shields.io/github/license/alvistack/ansible-role-mariadb.svg)](https://github.com/alvistack/ansible-role-mariadb/blob/master/LICENSE)
 [![Ansible Role](https://img.shields.io/badge/galaxy-alvistack.mariadb-blue.svg)](https://galaxy.ansible.com/alvistack/mariadb)
 
