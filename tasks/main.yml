@@ -45,6 +45,9 @@
         - "."
   ignore_errors: true
 
+- name: flush handlers
+  meta: flush_handlers
+
 - name: systemctl start mariadb.service
   service:
     name: "mariadb.service"
@@ -52,6 +55,3 @@
     enabled: true
   changed_when: false
   ignore_errors: true
-
-- name: flush handlers
-  meta: flush_handlers
