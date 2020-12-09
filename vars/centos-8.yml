@@ -63,13 +63,13 @@ _yum_repository:
 _yum:
   "10.5":
     - { state: "latest", name: "boost-devel" }
-    - { state: "latest", name: "MariaDB-server", disablerepo: "AppStream" }
-    - { state: "latest", name: "MariaDB-backup", disablerepo: "AppStream" }
+    - { state: "latest", name: "MariaDB-server", disablerepo: "appstream" }
+    - { state: "latest", name: "MariaDB-backup", disablerepo: "appstream" }
   "10.4":
     - { state: "latest", name: "boost-devel" }
-    - { state: "latest", name: "MariaDB-server", disablerepo: "AppStream" }
-    - { state: "latest", name: "MariaDB-backup", disablerepo: "AppStream" }
+    - { state: "latest", name: "MariaDB-server", disablerepo: "appstream" }
+    - { state: "latest", name: "MariaDB-backup", disablerepo: "appstream" }
   "10.3":
     - { state: "latest", name: "boost-devel" }
-    - { state: "latest", name: "MariaDB-server", disablerepo: "AppStream" }
-    - { state: "latest", name: "MariaDB-backup", disablerepo: "AppStream" }
+    - { state: "latest", name: "MariaDB-server", disablerepo: "appstream" }
+    - { state: "latest", name: "MariaDB-backup", disablerepo: "appstream" }
