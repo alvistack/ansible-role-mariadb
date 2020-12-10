@@ -27,7 +27,7 @@ _yum_repository:
 _yum:
   "10.5":
     - { state: "latest", name: "boost-devel" }
-    - { state: "latest", name: "MariaDB-server" } 
-    - { state: "latest", name: "MariaDB-backup" }
+    - { state: "latest", name: "mariadb-server" }
+    - { state: "latest", name: "mariadb-backup" }
   "10.4": []
   "10.3": []
