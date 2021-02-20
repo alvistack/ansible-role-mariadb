@@ -16,15 +16,15 @@
 
 _rpm_key:
   "10.5":
-    - key: "https://yum.mariadb.org/RPM-GPG-KEY-MariaDB"
+    - key: "http://yum.mariadb.org/RPM-GPG-KEY-MariaDB"
       fingerprint: "199369E5404BD5FC7D2FE43BCBCB082A1BB943DB"
       state: "present"
   "10.4":
-    - key: "https://yum.mariadb.org/RPM-GPG-KEY-MariaDB"
+    - key: "http://yum.mariadb.org/RPM-GPG-KEY-MariaDB"
       fingerprint: "199369E5404BD5FC7D2FE43BCBCB082A1BB943DB"
       state: "present"
   "10.3":
-    - key: "https://yum.mariadb.org/RPM-GPG-KEY-MariaDB"
+    - key: "http://yum.mariadb.org/RPM-GPG-KEY-MariaDB"
       fingerprint: "199369E5404BD5FC7D2FE43BCBCB082A1BB943DB"
       state: "present"
 
@@ -37,7 +37,7 @@ _yum_repository:
       enabled: true
       priority: "2"
       gpgcheck: true
-      gpgkey: "https://yum.mariadb.org/RPM-GPG-KEY-MariaDB"
+      gpgkey: "http://yum.mariadb.org/RPM-GPG-KEY-MariaDB"
       state: "present"
   "10.4":
     - file: "mariadb"
@@ -47,7 +47,7 @@ _yum_repository:
       enabled: true
       priority: "2"
       gpgcheck: true
-      gpgkey: "https://yum.mariadb.org/RPM-GPG-KEY-MariaDB"
+      gpgkey: "http://yum.mariadb.org/RPM-GPG-KEY-MariaDB"
       state: "present"
   "10.3":
     - file: "mariadb"
@@ -57,7 +57,7 @@ _yum_repository:
       enabled: true
       priority: "2"
       gpgcheck: true
-      gpgkey: "https://yum.mariadb.org/RPM-GPG-KEY-MariaDB"
+      gpgkey: "http://yum.mariadb.org/RPM-GPG-KEY-MariaDB"
       state: "present"
 
 _yum:

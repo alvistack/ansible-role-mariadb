@@ -17,15 +17,15 @@
 _zypper_repository:
   "10.5":
     - name: "mariadb"
-      repo: "https://yum.mariadb.org/10.5/opensuse/15/x86_64"
+      repo: "http://yum.mariadb.org/10.5/opensuse/15/x86_64"
       state: "present"
   "10.4":
     - name: "mariadb"
-      repo: "https://yum.mariadb.org/10.4/opensuse/15/x86_64"
+      repo: "http://yum.mariadb.org/10.4/opensuse/15/x86_64"
       state: "present"
   "10.3":
     - name: "mariadb"
-      repo: "https://yum.mariadb.org/10.3/opensuse/15/x86_64"
+      repo: "http://yum.mariadb.org/10.3/opensuse/15/x86_64"
       state: "present"
 
 _zypper:
