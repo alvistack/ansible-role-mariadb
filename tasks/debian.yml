@@ -22,13 +22,6 @@
   until: result is succeeded
   changed_when: result is not succeeded
 
-- name: apt-get install gnupg
-  apt:
-    name: "gnupg"
-    state: "present"
-  register: result
-  until: result is succeeded
-
 - name: apt-key add
   apt_key:
     url: "{{ item.url }}"
