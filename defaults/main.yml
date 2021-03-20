@@ -16,3 +16,9 @@
 
 # MariaDB release.
 mariadb_release: "10.5"
+
+# Kubernetes peer-fineder version.
+kubernetes_peer_finder_version: "latest"
+
+# Kubernetes peer-fineder download details.
+kubernetes_peer_finder_download: "{{ _kubernetes_peer_finder_download[kubernetes_peer_finder_version] }}"
