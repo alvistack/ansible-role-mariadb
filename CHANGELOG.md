@@ -4,6 +4,8 @@
 
 ### Major Changes
 
+  - Download Kubernetes `peer-finder`
+
 ## 4.7.0 - 2021-03-13
 
 ### Major Changes
