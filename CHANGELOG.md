@@ -4,6 +4,8 @@
 
 ### Major Changes
 
+  - Support Ubuntu 21.04
+
   - Download Kubernetes `peer-finder`
 
 ## 4.7.0 - 2021-03-13
