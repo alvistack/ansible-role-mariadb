@@ -5,6 +5,7 @@
 ### Major Changes
 
   - Support Fedora 34
+
   - Support Ubuntu 21.04
 
   - Download Kubernetes `peer-finder`
