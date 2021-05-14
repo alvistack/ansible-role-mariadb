@@ -30,13 +30,13 @@ _apt_key:
 
 _apt_repository:
   "10.5":
-    - repo: "deb [arch=amd64] http://ftp.osuosl.org/pub/mariadb/repo/10.5/ubuntu groovy main"
+    - repo: "deb [arch=amd64] http://ftp.osuosl.org/pub/mariadb/repo/10.5/ubuntu hirsute main"
       state: "present"
   "10.4":
-    - repo: "deb [arch=amd64] http://ftp.osuosl.org/pub/mariadb/repo/10.4/ubuntu groovy main"
+    - repo: "deb [arch=amd64] http://ftp.osuosl.org/pub/mariadb/repo/10.4/ubuntu hirsute main"
       state: "present"
   "10.3":
-    - repo: "deb [arch=amd64] http://ftp.osuosl.org/pub/mariadb/repo/10.3/ubuntu groovy main"
+    - repo: "deb [arch=amd64] http://ftp.osuosl.org/pub/mariadb/repo/10.3/ubuntu hirsute main"
       state: "present"
 
 _apt:
