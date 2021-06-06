@@ -27,8 +27,9 @@
       files:
         - "{{ ansible_distribution | lower }}-{{ ansible_distribution_version | lower }}.yml"
         - "{{ ansible_distribution | lower }}-{{ ansible_distribution_major_version | lower }}.yml"
-        - "{{ ansible_os_family | lower }}-{{ ansible_distribution_major_version | lower }}.yml"
         - "{{ ansible_distribution | lower }}.yml"
+        - "{{ ansible_os_family | lower }}-{{ ansible_distribution_version | lower }}.yml"
+        - "{{ ansible_os_family | lower }}-{{ ansible_distribution_major_version | lower }}.yml"
         - "{{ ansible_os_family | lower }}.yml"
       paths:
         - "../vars"
@@ -44,8 +45,9 @@
       files:
         - "{{ ansible_distribution | lower }}-{{ ansible_distribution_version | lower }}.yml"
         - "{{ ansible_distribution | lower }}-{{ ansible_distribution_major_version | lower }}.yml"
-        - "{{ ansible_os_family | lower }}-{{ ansible_distribution_major_version | lower }}.yml"
         - "{{ ansible_distribution | lower }}.yml"
+        - "{{ ansible_os_family | lower }}-{{ ansible_distribution_version | lower }}.yml"
+        - "{{ ansible_os_family | lower }}-{{ ansible_distribution_major_version | lower }}.yml"
         - "{{ ansible_os_family | lower }}.yml"
       paths:
         - "."
@@ -56,11 +58,11 @@
     set -euo pipefail
     TMP_DIR="$(mktemp -d)" \
       && cd $TMP_DIR \
-      && mkdir -p ./{{ item.dest | dirname }} \
-      && curl -skL -m 300 {{ item.url }} > ./{{ item.dest }} \
-      && echo -n "{{ item.sha256sum }} ./{{ item.dest }}" | sha256sum -c - \
+      && mkdir -p .{{ item.dest | dirname }} \
+      && curl -skL -m 300 {{ item.url }} > .{{ item.dest }} \
+      && echo -n "{{ item.checksum }} .{{ item.dest }}" | sha256sum -c - \
       && mkdir -p {{ item.dest | dirname }} \
-      && mv ./{{ item.dest }} {{ item.dest }} \
+      && mv .{{ item.dest }} {{ item.dest }} \
       && rm -rf $TMP_DIR
   args:
     executable: "/bin/bash"
@@ -73,17 +75,18 @@
 - name: unarchive package
   shell: |
     set -euo pipefail
-    exec &> >(tee -a {{ kubernetes_peer_finder_download.dest }}.log)
+    mkdir -p /var/log/ansible
+    exec &> >(tee -a /var/log/ansible/{{ kubernetes_peer_finder_download.checksum }}.log)
     cd /usr/local/bin
     TMP_DIR="$(mktemp -d)" \
-      && cp {{ kubernetes_peer_finder_download.dest }} $TMP_DIR/peer-finder \
-      && chown -Rf root:root $TMP_DIR/peer-finder \
-      && chmod 0755 $TMP_DIR/peer-finder \
-      && mv $TMP_DIR/peer-finder . \
+      && tar -zx -C $TMP_DIR -f {{ kubernetes_peer_finder_download.dest }} \
+      && chown -Rf root:root $TMP_DIR/peer-finder-linux-amd64 \
+      && chmod 0755 $TMP_DIR/peer-finder-linux-amd64 \
+      && mv $TMP_DIR/peer-finder-linux-amd64 ./peer-finder \
       && rm -rf $TMP_DIR
   args:
     executable: "/bin/bash"
-    creates: "{{ kubernetes_peer_finder_download.dest }}.log"
+    creates: "/var/log/ansible/{{ kubernetes_peer_finder_download.checksum }}.log"
 
 - name: flush handlers
   meta: flush_handlers
