@@ -20,5 +20,5 @@ _kubernetes_peer_finder_version:
 _kubernetes_peer_finder_download:
   "v1.1.0":
     url: "http://github.com/kmodules/peer-finder/releases/download/v1.1.0/peer-finder-linux-amd64.tar.gz"
-    dest: "/tmp/db6606a1da4b09ec931eec61b3ef45454cebc52a6f06bafe537a06394cf1335d/peer-finder-v1.1.0-linux-amd64.tar.gz"
+    dest: "/var/cache/ansible/db6606a1da4b09ec931eec61b3ef45454cebc52a6f06bafe537a06394cf1335d/peer-finder-v1.1.0-linux-amd64.tar.gz"
     checksum: "db6606a1da4b09ec931eec61b3ef45454cebc52a6f06bafe537a06394cf1335d"
