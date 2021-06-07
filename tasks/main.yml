@@ -79,10 +79,10 @@
     exec &> >(tee -a /var/log/ansible/{{ kubernetes_peer_finder_download.checksum }}-unarchive.log)
     cd /usr/local/bin
     TMP_DIR="$(mktemp -d)" \
-      && tar -zx -C $TMP_DIR -f {{ kubernetes_peer_finder_download.dest }} \
-      && chown -Rf root:root $TMP_DIR/peer-finder-linux-amd64 \
-      && chmod 0755 $TMP_DIR/peer-finder-linux-amd64 \
-      && mv $TMP_DIR/peer-finder-linux-amd64 ./peer-finder \
+      && cp {{ kubernetes_peer_finder_download.dest }} $TMP_DIR/peer-finder \
+      && chown -Rf root:root $TMP_DIR/peer-finder \
+      && chmod 0755 $TMP_DIR/peer-finder \
+      && mv $TMP_DIR/peer-finder . \
       && rm -rf $TMP_DIR
   args:
     executable: "/bin/bash"
