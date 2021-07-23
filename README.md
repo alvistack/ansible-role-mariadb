@@ -1,13 +1,9 @@
 # Ansible Role for MariaDB
 
-[![Gitlab pipeline
-status](https://img.shields.io/gitlab/pipeline/alvistack/ansible-role-mariadb/master)](https://gitlab.com/alvistack/ansible-role-mariadb/-/pipelines)
-[![GitHub
-release](https://img.shields.io/github/release/alvistack/ansible-role-mariadb.svg)](https://github.com/alvistack/ansible-role-mariadb/releases)
-[![GitHub
-license](https://img.shields.io/github/license/alvistack/ansible-role-mariadb.svg)](https://github.com/alvistack/ansible-role-mariadb/blob/master/LICENSE)
-[![Ansible
-Role](https://img.shields.io/badge/galaxy-alvistack.mariadb-blue.svg)](https://galaxy.ansible.com/alvistack/mariadb)
+[![Gitlab pipeline status](https://img.shields.io/gitlab/pipeline/alvistack/ansible-role-mariadb/master)](https://gitlab.com/alvistack/ansible-role-mariadb/-/pipelines)
+[![GitHub release](https://img.shields.io/github/release/alvistack/ansible-role-mariadb.svg)](https://github.com/alvistack/ansible-role-mariadb/releases)
+[![GitHub license](https://img.shields.io/github/license/alvistack/ansible-role-mariadb.svg)](https://github.com/alvistack/ansible-role-mariadb/blob/master/LICENSE)
+[![Ansible Role](https://img.shields.io/badge/galaxy-alvistack.mariadb-blue.svg)](https://galaxy.ansible.com/alvistack/mariadb)
 
 Ansible Role for MariaDB Installation.
 
@@ -43,8 +39,7 @@ This role could simply deploy to `localhost` as below:
 ## License
 
   - Code released under [Apache License 2.0](LICENSE)
-  - Docs released under [CC BY
-    4.0](http://creativecommons.org/licenses/by/4.0/)
+  - Docs released under [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/)
 
 ## Author Information
 
