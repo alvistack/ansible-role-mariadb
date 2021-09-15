@@ -36,7 +36,7 @@ _yum_repository:
       baseurl: "http://yum.mariadb.org/10.5/rhel7-amd64"
       enabled: true
       priority: "2"
-    module_hotfixes: true
+      module_hotfixes: true
       gpgcheck: true
       gpgkey: "http://yum.mariadb.org/RPM-GPG-KEY-MariaDB"
       state: "present"
@@ -47,7 +47,7 @@ _yum_repository:
       baseurl: "http://yum.mariadb.org/10.4/rhel7-amd64"
       enabled: true
       priority: "2"
-    module_hotfixes: true
+      module_hotfixes: true
       gpgcheck: true
       gpgkey: "http://yum.mariadb.org/RPM-GPG-KEY-MariaDB"
       state: "present"
@@ -58,7 +58,7 @@ _yum_repository:
       baseurl: "http://yum.mariadb.org/10.3/rhel7-amd64"
       enabled: true
       priority: "2"
-    module_hotfixes: true
+      module_hotfixes: true
       gpgcheck: true
       gpgkey: "http://yum.mariadb.org/RPM-GPG-KEY-MariaDB"
       state: "present"
