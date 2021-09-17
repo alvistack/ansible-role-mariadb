@@ -16,27 +16,33 @@
 
 _apt_key:
   "10.5":
-    - url: "http://mariadb.org/mariadb_release_signing_key.asc"
+    - keyring: "/etc/apt/trusted.gpg.d/mariadb.asc"
+      url: "http://mariadb.org/mariadb_release_signing_key.asc"
       id: "177F4010FE56CA3336300305F1656F24C74CD1D8"
       state: "present"
   "10.4":
-    - url: "http://mariadb.org/mariadb_release_signing_key.asc"
+    - keyring: "/etc/apt/trusted.gpg.d/mariadb.asc"
+      url: "http://mariadb.org/mariadb_release_signing_key.asc"
       id: "177F4010FE56CA3336300305F1656F24C74CD1D8"
       state: "present"
   "10.3":
-    - url: "http://mariadb.org/mariadb_release_signing_key.asc"
+    - keyring: "/etc/apt/trusted.gpg.d/mariadb.asc"
+      url: "http://mariadb.org/mariadb_release_signing_key.asc"
       id: "177F4010FE56CA3336300305F1656F24C74CD1D8"
       state: "present"
 
 _apt_repository:
   "10.5":
-    - repo: "deb [arch=amd64] http://ftp.osuosl.org/pub/mariadb/repo/10.5/debian bullseye main"
+    - filename: "home:mariadb"
+      repo: "deb [arch=amd64] http://ftp.osuosl.org/pub/mariadb/repo/10.5/debian bullseye main"
       state: "present"
   "10.4":
-    - repo: "deb [arch=amd64] http://ftp.osuosl.org/pub/mariadb/repo/10.4/debian bullseye main"
+    - filename: "home:mariadb"
+      repo: "deb [arch=amd64] http://ftp.osuosl.org/pub/mariadb/repo/10.4/debian bullseye main"
       state: "present"
   "10.3":
-    - repo: "deb [arch=amd64] http://ftp.osuosl.org/pub/mariadb/repo/10.3/debian bullseye main"
+    - filename: "home:mariadb"
+      repo: "deb [arch=amd64] http://ftp.osuosl.org/pub/mariadb/repo/10.3/debian bullseye main"
       state: "present"
 
 _apt:
