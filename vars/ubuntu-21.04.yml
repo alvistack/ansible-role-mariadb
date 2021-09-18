@@ -16,17 +16,17 @@
 
 _apt_key:
   "10.5":
-    - keyring: "/etc/apt/trusted.gpg.d/mariadb.asc"
+    - keyring: "/etc/apt/trusted.gpg.d/mariadb.gpg"
       url: "http://mariadb.org/mariadb_release_signing_key.asc"
       id: "177F4010FE56CA3336300305F1656F24C74CD1D8"
       state: "present"
   "10.4":
-    - keyring: "/etc/apt/trusted.gpg.d/mariadb.asc"
+    - keyring: "/etc/apt/trusted.gpg.d/mariadb.gpg"
       url: "http://mariadb.org/mariadb_release_signing_key.asc"
       id: "177F4010FE56CA3336300305F1656F24C74CD1D8"
       state: "present"
   "10.3":
-    - keyring: "/etc/apt/trusted.gpg.d/mariadb.asc"
+    - keyring: "/etc/apt/trusted.gpg.d/mariadb.gpg"
       url: "http://mariadb.org/mariadb_release_signing_key.asc"
       id: "177F4010FE56CA3336300305F1656F24C74CD1D8"
       state: "present"
