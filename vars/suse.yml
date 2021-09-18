@@ -14,18 +14,53 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-_zypper_repository:
+_rpm_key:
   "10.5":
-    - name: "mariadb"
-      repo: "http://yum.mariadb.org/10.5/opensuse/15/x86_64"
+    - key: "http://yum.mariadb.org/RPM-GPG-KEY-MariaDB"
+      fingerprint: "199369E5404BD5FC7D2FE43BCBCB082A1BB943DB"
       state: "present"
   "10.4":
-    - name: "mariadb"
-      repo: "http://yum.mariadb.org/10.4/opensuse/15/x86_64"
+    - key: "http://yum.mariadb.org/RPM-GPG-KEY-MariaDB"
+      fingerprint: "199369E5404BD5FC7D2FE43BCBCB082A1BB943DB"
       state: "present"
   "10.3":
-    - name: "mariadb"
-      repo: "http://yum.mariadb.org/10.3/opensuse/15/x86_64"
+    - key: "http://yum.mariadb.org/RPM-GPG-KEY-MariaDB"
+      fingerprint: "199369E5404BD5FC7D2FE43BCBCB082A1BB943DB"
+      state: "present"
+
+_yum_repository:
+  "10.5":
+    - file: "mariadb"
+      name: "mariadb"
+      description: "MariaDB"
+      baseurl: "http://yum.mariadb.org/10.5/opensuse/15/x86_64"
+      enabled: true
+      priority: "2"
+      module_hotfixes: true
+      gpgcheck: true
+      gpgkey: "http://yum.mariadb.org/RPM-GPG-KEY-MariaDB"
+      state: "present"
+  "10.4":
+    - file: "mariadb"
+      name: "mariadb"
+      description: "MariaDB"
+      baseurl: "http://yum.mariadb.org/10.4/opensuse/15/x86_64"
+      enabled: true
+      priority: "2"
+      module_hotfixes: true
+      gpgcheck: true
+      gpgkey: "http://yum.mariadb.org/RPM-GPG-KEY-MariaDB"
+      state: "present"
+  "10.3":
+    - file: "mariadb"
+      name: "mariadb"
+      description: "MariaDB"
+      baseurl: "http://yum.mariadb.org/10.3/opensuse/15/x86_64"
+      enabled: true
+      priority: "2"
+      module_hotfixes: true
+      gpgcheck: true
+      gpgkey: "http://yum.mariadb.org/RPM-GPG-KEY-MariaDB"
       state: "present"
 
 _zypper:
