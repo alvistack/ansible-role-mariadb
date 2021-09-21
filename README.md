@@ -1,5 +1,7 @@
 # Ansible Role for MariaDB
 
+<img src="/alvistack.svg" width="75" alt="AlviStack">
+
 [![Gitlab pipeline status](https://img.shields.io/gitlab/pipeline/alvistack/ansible-role-mariadb/master)](https://gitlab.com/alvistack/ansible-role-mariadb/-/pipelines)
 [![GitHub release](https://img.shields.io/github/release/alvistack/ansible-role-mariadb.svg)](https://github.com/alvistack/ansible-role-mariadb/releases)
 [![GitHub license](https://img.shields.io/github/license/alvistack/ansible-role-mariadb.svg)](https://github.com/alvistack/ansible-role-mariadb/blob/master/LICENSE)
