@@ -34,7 +34,7 @@ _apt_key:
 _apt_repository:
   "10.5":
     - filename: "home:mariadb"
-      repo: "deb [arch=amd64] http://ftp.osuosl.org/pub/mariadb/repo/10.5/ubuntu hirsute main"
+      repo: "deb [arch=amd64] http://ftp.osuosl.org/pub/mariadb/repo/10.5/ubuntu impish main"
       state: "present"
   "10.4":
     - filename: "home:mariadb"
