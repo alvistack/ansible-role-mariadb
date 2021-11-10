@@ -15,19 +15,48 @@
 # limitations under the License.
 
 _rpm_key:
-  "10.5": []
+  "10.6":
+    - key: "http://yum.mariadb.org/RPM-GPG-KEY-MariaDB"
+      fingerprint: "199369E5404BD5FC7D2FE43BCBCB082A1BB943DB"
+      state: "present"
+  "10.5":
+    - key: "http://yum.mariadb.org/RPM-GPG-KEY-MariaDB"
+      fingerprint: "199369E5404BD5FC7D2FE43BCBCB082A1BB943DB"
+      state: "present"
   "10.4": []
-  "10.3": []
 
 _yum_repository:
-  "10.5": []
+  "10.6":
+    - file: "mariadb"
+      name: "mariadb"
+      description: "MariaDB"
+      baseurl: "http://yum.mariadb.org/10.6/fedora34-amd64"
+      enabled: true
+      priority: "2"
+      module_hotfixes: true
+      gpgcheck: true
+      gpgkey: "http://yum.mariadb.org/RPM-GPG-KEY-MariaDB"
+      state: "present"
+  "10.5":
+    - file: "mariadb"
+      name: "mariadb"
+      description: "MariaDB"
+      baseurl: "http://yum.mariadb.org/10.5/fedora34-amd64"
+      enabled: true
+      priority: "2"
+      module_hotfixes: true
+      gpgcheck: true
+      gpgkey: "http://yum.mariadb.org/RPM-GPG-KEY-MariaDB"
+      state: "present"
   "10.4": []
-  "10.3": []
 
 _yum:
+  "10.6":
+    - { state: "latest", name: "boost-devel" }
+    - { state: "latest", name: "MariaDB-server" }
+    - { state: "latest", name: "MariaDB-backup" }
   "10.5":
     - { state: "latest", name: "boost-devel" }
-    - { state: "latest", name: "mariadb-server" }
-    - { state: "latest", name: "mariadb-backup" }
+    - { state: "latest", name: "MariaDB-server" }
+    - { state: "latest", name: "MariaDB-backup" }
   "10.4": []
-  "10.3": []
