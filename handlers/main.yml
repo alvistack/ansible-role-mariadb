@@ -15,7 +15,7 @@
 # limitations under the License.
 
 - name: mariadb | systemctl restart mariadb.service
-  service:
+  ansible.builtin.service:
     name: "mariadb.service"
     state: "restarted"
     enabled: true
