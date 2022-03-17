@@ -15,10 +15,10 @@
 # limitations under the License.
 
 - name: include default variables
-  include_vars: "../vars/main.yml"
+  ansible.builtin.include_vars: "../vars/main.yml"
 
 - name: include release specific variables
-  include_vars: "{{ _loop_var }}"
+  ansible.builtin.include_vars: "{{ _loop_var }}"
   loop: "{{ query('first_found', _params) }}"
   loop_control:
     loop_var: _loop_var
@@ -54,7 +54,7 @@
       skip: true
 
 - name: download archive
-  shell: |
+  ansible.builtin.shell: |
     set -euxo pipefail
     mkdir -p /var/log/ansible
     exec &> >(tee -a /var/log/ansible/{{ kube_peer_finder_download.checksum }}-get_url.log)
@@ -73,7 +73,7 @@
   until: result is succeeded
 
 - name: unarchive package
-  shell: |
+  ansible.builtin.shell: |
     set -euxo pipefail
     mkdir -p /var/log/ansible
     exec &> >(tee -a /var/log/ansible/{{ kube_peer_finder_download.checksum }}-unarchive.log)
@@ -89,10 +89,10 @@
     creates: "/var/log/ansible/{{ kube_peer_finder_download.checksum }}-unarchive.log"
 
 - name: flush handlers
-  meta: flush_handlers
+  ansible.builtin.meta: flush_handlers
 
 - name: systemctl start mariadb.service
-  service:
+  ansible.builtin.service:
     name: "mariadb.service"
     state: "started"
     enabled: true
