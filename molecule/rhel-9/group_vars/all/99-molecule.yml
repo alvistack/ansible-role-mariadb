@@ -13,15 +13,3 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
-# MariaDB release.
-mariadb_release: "10.7"
-
-# Kubernetes peer-fineder release.
-kube_peer_finder_release: "latest"
-
-# Kubernetes peer-fineder version.
-kube_peer_finder_version: "{{ _kube_peer_finder_version[kube_peer_finder_release] }}"
-
-# Kubernetes peer-fineder download details.
-kube_peer_finder_download: "{{ _kube_peer_finder_download[kube_peer_finder_version] }}"

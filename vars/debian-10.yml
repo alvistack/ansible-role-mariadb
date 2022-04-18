@@ -15,37 +15,42 @@
 # limitations under the License.
 
 _apt_key:
+  "10.7":
+    - keyring: "/etc/apt/trusted.gpg.d/mariadb.gpg"
+      url: "http://mariadb.org/mariadb_release_signing_key.asc"
+      id: "177F4010FE56CA3336300305F1656F24C74CD1D8"
+      state: "present"
   "10.6":
     - keyring: "/etc/apt/trusted.gpg.d/mariadb.gpg"
       url: "http://mariadb.org/mariadb_release_signing_key.asc"
       id: "177F4010FE56CA3336300305F1656F24C74CD1D8"
       state: "present"
   "10.5":
-    - keyring: "/etc/apt/trusted.gpg.d/mariadb.gpg"
-      url: "http://mariadb.org/mariadb_release_signing_key.asc"
-      id: "177F4010FE56CA3336300305F1656F24C74CD1D8"
-      state: "present"
-  "10.4":
     - keyring: "/etc/apt/trusted.gpg.d/mariadb.gpg"
       url: "http://mariadb.org/mariadb_release_signing_key.asc"
       id: "177F4010FE56CA3336300305F1656F24C74CD1D8"
       state: "present"
 
 _apt_repository:
+  "10.7":
+    - filename: "home:mariadb"
+      repo: "deb [arch=amd64] http://mirror.mariadb.org/repo/10.7/debian buster main"
+      state: "present"
   "10.6":
     - filename: "home:mariadb"
-      repo: "deb [arch=amd64] http://ftp.osuosl.org/pub/mariadb/repo/10.6/debian buster main"
+      repo: "deb [arch=amd64] http://mirror.mariadb.org/repo/10.6/debian buster main"
       state: "present"
   "10.5":
     - filename: "home:mariadb"
-      repo: "deb [arch=amd64] http://ftp.osuosl.org/pub/mariadb/repo/10.5/debian buster main"
-      state: "present"
-  "10.4":
-    - filename: "home:mariadb"
-      repo: "deb [arch=amd64] http://ftp.osuosl.org/pub/mariadb/repo/10.4/debian buster main"
+      repo: "deb [arch=amd64] http://mirror.mariadb.org/repo/10.5/debian buster main"
       state: "present"
 
 _apt:
+  "10.7":
+    - { state: "latest", name: "mysql-common" }
+    - { state: "latest", name: "mariadb-server-10.7" }
+    - { state: "latest", name: "mariadb-backup" }
+    - { state: "latest", name: "socat" }
   "10.6":
     - { state: "latest", name: "mysql-common" }
     - { state: "latest", name: "mariadb-server-10.6" }
@@ -54,10 +59,5 @@ _apt:
   "10.5":
     - { state: "latest", name: "mysql-common" }
     - { state: "latest", name: "mariadb-server-10.5" }
-    - { state: "latest", name: "mariadb-backup" }
-    - { state: "latest", name: "socat" }
-  "10.4":
-    - { state: "latest", name: "mysql-common" }
-    - { state: "latest", name: "mariadb-server-10.4" }
     - { state: "latest", name: "mariadb-backup" }
     - { state: "latest", name: "socat" }

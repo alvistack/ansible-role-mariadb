@@ -33,7 +33,7 @@ _yum_repository:
     - file: "mariadb"
       name: "mariadb"
       description: "MariaDB"
-      baseurl: "http://yum.mariadb.org/10.7/centos8-amd64"
+      baseurl: "http://yum.mariadb.org/10.7/rhel8-amd64"
       enabled: true
       priority: "2"
       module_hotfixes: true
@@ -44,7 +44,7 @@ _yum_repository:
     - file: "mariadb"
       name: "mariadb"
       description: "MariaDB"
-      baseurl: "http://yum.mariadb.org/10.6/centos8-amd64"
+      baseurl: "http://yum.mariadb.org/10.6/rhel8-amd64"
       enabled: true
       priority: "2"
       module_hotfixes: true
@@ -55,7 +55,7 @@ _yum_repository:
     - file: "mariadb"
       name: "mariadb"
       description: "MariaDB"
-      baseurl: "http://yum.mariadb.org/10.5/centos8-amd64"
+      baseurl: "http://yum.mariadb.org/10.5/rhel8-amd64"
       enabled: true
       priority: "2"
       module_hotfixes: true
@@ -66,13 +66,13 @@ _yum_repository:
 _yum:
   "10.7":
     - { state: "latest", name: "boost-devel" }
-    - { state: "latest", name: "MariaDB-server", disablerepo: "appstream" }
-    - { state: "latest", name: "MariaDB-backup", disablerepo: "appstream" }
+    - { state: "latest", name: "MariaDB-server", disablerepo: "rhel-9-for-x86_64-appstream-beta-rpms" }
+    - { state: "latest", name: "MariaDB-backup", disablerepo: "rhel-9-for-x86_64-appstream-beta-rpms" }
   "10.6":
     - { state: "latest", name: "boost-devel" }
-    - { state: "latest", name: "MariaDB-server", disablerepo: "appstream" }
-    - { state: "latest", name: "MariaDB-backup", disablerepo: "appstream" }
+    - { state: "latest", name: "MariaDB-server", disablerepo: "rhel-9-for-x86_64-appstream-beta-rpms" }
+    - { state: "latest", name: "MariaDB-backup", disablerepo: "rhel-9-for-x86_64-appstream-beta-rpms" }
   "10.5":
     - { state: "latest", name: "boost-devel" }
-    - { state: "latest", name: "MariaDB-server", disablerepo: "appstream" }
-    - { state: "latest", name: "MariaDB-backup", disablerepo: "appstream" }
+    - { state: "latest", name: "MariaDB-server", disablerepo: "rhel-9-for-x86_64-appstream-beta-rpms" }
+    - { state: "latest", name: "MariaDB-backup", disablerepo: "rhel-9-for-x86_64-appstream-beta-rpms" }
