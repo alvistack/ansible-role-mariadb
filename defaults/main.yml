@@ -15,7 +15,7 @@
 # limitations under the License.
 
 # MariaDB release.
-mariadb_release: "10.7"
+mariadb_release: "10.6"
 
 # Kubernetes peer-fineder release.
 kube_peer_finder_release: "latest"
