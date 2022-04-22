@@ -31,8 +31,4 @@ _apt:
     - { state: "latest", name: "mariadb-server-10.6" }
     - { state: "latest", name: "mariadb-backup" }
     - { state: "latest", name: "socat" }
-  "10.5":
-    - { state: "latest", name: "mysql-common" }
-    - { state: "latest", name: "mariadb-server-10.5" }
-    - { state: "latest", name: "mariadb-backup" }
-    - { state: "latest", name: "socat" }
+  "10.5": []
