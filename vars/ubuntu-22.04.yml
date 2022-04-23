@@ -15,20 +15,55 @@
 # limitations under the License.
 
 _apt_key:
-  "10.7": []
-  "10.6": []
-  "10.5": []
+  "10.7":
+    - keyring: "/etc/apt/trusted.gpg.d/mariadb.gpg"
+      url: "http://mariadb.org/mariadb_release_signing_key.asc"
+      id: "177F4010FE56CA3336300305F1656F24C74CD1D8"
+      state: "present"
+  "10.6":
+    - keyring: "/etc/apt/trusted.gpg.d/mariadb.gpg"
+      url: "http://mariadb.org/mariadb_release_signing_key.asc"
+      id: "177F4010FE56CA3336300305F1656F24C74CD1D8"
+      state: "present"
+  "10.5":
+    - keyring: "/etc/apt/trusted.gpg.d/mariadb.gpg"
+      url: "http://mariadb.org/mariadb_release_signing_key.asc"
+      id: "177F4010FE56CA3336300305F1656F24C74CD1D8"
+      state: "present"
 
 _apt_repository:
-  "10.7": []
-  "10.6": []
-  "10.5": []
+  "10.7":
+    - filename: "mariadb"
+      repo: "deb [arch=amd64] http://mirror.mariadb.org/repo/10.7/ubuntu impish main"
+      state: "present"
+  "10.6":
+    - filename: "mariadb"
+      repo: "deb [arch=amd64] http://mirror.mariadb.org/repo/10.6/ubuntu impish main"
+      state: "present"
+  "10.5":
+    - filename: "mariadb"
+      repo: "deb [arch=amd64] http://mirror.mariadb.org/repo/10.5/ubuntu impish main"
+      state: "present"
 
 _apt:
-  "10.7": []
+  "10.7":
+    - { state: "present", deb: "http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1l-1ubuntu1.2_amd64.deb" }
+    - { state: "present", deb: "http://archive.ubuntu.com/ubuntu/pool/main/libu/liburing/liburing1_0.7-3ubuntu3_amd64.deb" }
+    - { state: "latest", name: "mysql-common" }
+    - { state: "latest", name: "mariadb-server-10.7" }
+    - { state: "latest", name: "mariadb-backup" }
+    - { state: "latest", name: "socat" }
   "10.6":
+    - { state: "present", deb: "http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1l-1ubuntu1.2_amd64.deb" }
+    - { state: "present", deb: "http://archive.ubuntu.com/ubuntu/pool/main/libu/liburing/liburing1_0.7-3ubuntu3_amd64.deb" }
     - { state: "latest", name: "mysql-common" }
     - { state: "latest", name: "mariadb-server-10.6" }
     - { state: "latest", name: "mariadb-backup" }
     - { state: "latest", name: "socat" }
-  "10.5": []
+  "10.5":
+    - { state: "present", deb: "http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1l-1ubuntu1.2_amd64.deb" }
+    - { state: "present", deb: "http://archive.ubuntu.com/ubuntu/pool/main/libu/liburing/liburing1_0.7-3ubuntu3_amd64.deb" }
+    - { state: "latest", name: "mysql-common" }
+    - { state: "latest", name: "mariadb-server-10.5" }
+    - { state: "latest", name: "mariadb-backup" }
+    - { state: "latest", name: "socat" }
