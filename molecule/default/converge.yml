@@ -20,5 +20,5 @@
   tasks:
     - name: include role
       ansible.builtin.include_role:
-        name: mariadb
-      tags: mariadb
+        name: alvistack.mariadb
+      tags: alvistack.mariadb

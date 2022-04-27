@@ -33,15 +33,15 @@ _apt_key:
 
 _apt_repository:
   "10.7":
-    - filename: "home:mariadb"
+    - filename: "mariadb"
       repo: "deb [arch=amd64] http://mirror.mariadb.org/repo/10.7/ubuntu impish main"
       state: "present"
   "10.6":
-    - filename: "home:mariadb"
+    - filename: "mariadb"
       repo: "deb [arch=amd64] http://mirror.mariadb.org/repo/10.6/ubuntu impish main"
       state: "present"
   "10.5":
-    - filename: "home:mariadb"
+    - filename: "mariadb"
       repo: "deb [arch=amd64] http://mirror.mariadb.org/repo/10.5/ubuntu impish main"
       state: "present"
 
