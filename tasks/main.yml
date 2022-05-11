@@ -53,41 +53,6 @@
         - "."
       skip: true
 
-- name: download archive
-  ansible.builtin.shell: |
-    set -euxo pipefail
-    mkdir -p /var/log/ansible
-    exec &> >(tee -a /var/log/ansible/{{ kube_peer_finder_download.checksum }}-get_url.log)
-    TMP_DIR="$(mktemp -d)" \
-      && cd $TMP_DIR \
-      && mkdir -p .{{ kube_peer_finder_download.dest | dirname }} \
-      && curl -skL -m 300 {{ kube_peer_finder_download.url }} > .{{ kube_peer_finder_download.dest }} \
-      && echo -n "{{ kube_peer_finder_download.checksum }} .{{ kube_peer_finder_download.dest }}" | sha256sum -c - \
-      && mkdir -p {{ kube_peer_finder_download.dest | dirname }} \
-      && mv .{{ kube_peer_finder_download.dest }} {{ kube_peer_finder_download.dest }} \
-      && rm -rf $TMP_DIR
-  args:
-    executable: "/bin/bash"
-    creates: "/var/log/ansible/{{ kube_peer_finder_download.checksum }}-get_url.log"
-  register: result
-  until: result is succeeded
-
-- name: unarchive package
-  ansible.builtin.shell: |
-    set -euxo pipefail
-    mkdir -p /var/log/ansible
-    exec &> >(tee -a /var/log/ansible/{{ kube_peer_finder_download.checksum }}-unarchive.log)
-    cd /usr/local/bin
-    TMP_DIR="$(mktemp -d)" \
-      && cp {{ kube_peer_finder_download.dest }} $TMP_DIR/peer-finder \
-      && chown -Rf root:root $TMP_DIR/peer-finder \
-      && chmod 0755 $TMP_DIR/peer-finder \
-      && mv $TMP_DIR/peer-finder . \
-      && rm -rf $TMP_DIR
-  args:
-    executable: "/bin/bash"
-    creates: "/var/log/ansible/{{ kube_peer_finder_download.checksum }}-unarchive.log"
-
 - name: flush handlers
   ansible.builtin.meta: flush_handlers
 
