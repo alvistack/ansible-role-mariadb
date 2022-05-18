@@ -105,16 +105,16 @@ _yum_repository:
 _yum:
   "10.7":
     - { state: "latest", name: "boost-devel" }
-    - { state: "latest", name: "MariaDB-server", disablerepo: "rhel-9-for-x86_64-appstream-beta-rpms" }
-    - { state: "latest", name: "MariaDB-backup", disablerepo: "rhel-9-for-x86_64-appstream-beta-rpms" }
+    - { state: "latest", name: "MariaDB-server", disablerepo: "rhel-9-for-x86_64-appstream-rpms" }
+    - { state: "latest", name: "MariaDB-backup", disablerepo: "rhel-9-for-x86_64-appstream-rpms" }
     - { state: "latest", name: "peer-finder" }
   "10.6":
     - { state: "latest", name: "boost-devel" }
-    - { state: "latest", name: "MariaDB-server", disablerepo: "rhel-9-for-x86_64-appstream-beta-rpms" }
-    - { state: "latest", name: "MariaDB-backup", disablerepo: "rhel-9-for-x86_64-appstream-beta-rpms" }
+    - { state: "latest", name: "MariaDB-server", disablerepo: "rhel-9-for-x86_64-appstream-rpms" }
+    - { state: "latest", name: "MariaDB-backup", disablerepo: "rhel-9-for-x86_64-appstream-rpms" }
     - { state: "latest", name: "peer-finder" }
   "10.5":
     - { state: "latest", name: "boost-devel" }
-    - { state: "latest", name: "MariaDB-server", disablerepo: "rhel-9-for-x86_64-appstream-beta-rpms" }
-    - { state: "latest", name: "MariaDB-backup", disablerepo: "rhel-9-for-x86_64-appstream-beta-rpms" }
+    - { state: "latest", name: "MariaDB-server", disablerepo: "rhel-9-for-x86_64-appstream-rpms" }
+    - { state: "latest", name: "MariaDB-backup", disablerepo: "rhel-9-for-x86_64-appstream-rpms" }
     - { state: "latest", name: "peer-finder" }
