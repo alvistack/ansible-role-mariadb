@@ -68,7 +68,7 @@ _apt_repository:
 
 _apt:
   "10.7":
-    - { state: "present", deb: "http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1l-1ubuntu1.3_amd64.deb" }
+    - { state: "present", deb: "http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1l-1ubuntu1.5_amd64.deb" }
     - { state: "present", deb: "http://archive.ubuntu.com/ubuntu/pool/main/libu/liburing/liburing1_0.7-3ubuntu3_amd64.deb" }
     - { state: "latest", name: "mysql-common" }
     - { state: "latest", name: "mariadb-server-10.7" }
@@ -76,7 +76,7 @@ _apt:
     - { state: "latest", name: "socat" }
     - { state: "latest", name: "peer-finder" }
   "10.6":
-    - { state: "present", deb: "http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1l-1ubuntu1.3_amd64.deb" }
+    - { state: "present", deb: "http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1l-1ubuntu1.5_amd64.deb" }
     - { state: "present", deb: "http://archive.ubuntu.com/ubuntu/pool/main/libu/liburing/liburing1_0.7-3ubuntu3_amd64.deb" }
     - { state: "latest", name: "mysql-common" }
     - { state: "latest", name: "mariadb-server-10.6" }
@@ -84,7 +84,7 @@ _apt:
     - { state: "latest", name: "socat" }
     - { state: "latest", name: "peer-finder" }
   "10.5":
-    - { state: "present", deb: "http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1l-1ubuntu1.3_amd64.deb" }
+    - { state: "present", deb: "http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1l-1ubuntu1.5_amd64.deb" }
     - { state: "present", deb: "http://archive.ubuntu.com/ubuntu/pool/main/libu/liburing/liburing1_0.7-3ubuntu3_amd64.deb" }
     - { state: "latest", name: "mysql-common" }
     - { state: "latest", name: "mariadb-server-10.5" }
