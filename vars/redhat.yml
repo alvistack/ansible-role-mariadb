@@ -15,22 +15,22 @@
 # limitations under the License.
 
 _rpm_key:
+  "10.8":
+    - key: "http://mirror.mariadb.org/yum/RPM-GPG-KEY-MariaDB"
+      fingerprint: "199369E5404BD5FC7D2FE43BCBCB082A1BB943DB"
+      state: "present"
+    - key: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/Fedora_Rawhide/repodata/repomd.xml.key"
+      fingerprint: "789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD"
+      state: "present"
   "10.7":
-    - key: "http://yum.mariadb.org/RPM-GPG-KEY-MariaDB"
+    - key: "http://mirror.mariadb.org/yum/RPM-GPG-KEY-MariaDB"
       fingerprint: "199369E5404BD5FC7D2FE43BCBCB082A1BB943DB"
       state: "present"
     - key: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/Fedora_Rawhide/repodata/repomd.xml.key"
       fingerprint: "789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD"
       state: "present"
   "10.6":
-    - key: "http://yum.mariadb.org/RPM-GPG-KEY-MariaDB"
-      fingerprint: "199369E5404BD5FC7D2FE43BCBCB082A1BB943DB"
-      state: "present"
-    - key: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/Fedora_Rawhide/repodata/repomd.xml.key"
-      fingerprint: "789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD"
-      state: "present"
-  "10.5":
-    - key: "http://yum.mariadb.org/RPM-GPG-KEY-MariaDB"
+    - key: "http://mirror.mariadb.org/yum/RPM-GPG-KEY-MariaDB"
       fingerprint: "199369E5404BD5FC7D2FE43BCBCB082A1BB943DB"
       state: "present"
     - key: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/Fedora_Rawhide/repodata/repomd.xml.key"
@@ -38,16 +38,37 @@ _rpm_key:
       state: "present"
 
 _yum_repository:
-  "10.7":
+  "10.8":
     - file: "mariadb"
       name: "mariadb"
       description: "MariaDB"
-      baseurl: "http://yum.mariadb.org/10.7/fedora35-amd64"
+      baseurl: "http://mirror.mariadb.org/yum/10.8/fedora35-amd64"
       enabled: true
       priority: "2"
       module_hotfixes: true
       gpgcheck: true
-      gpgkey: "http://yum.mariadb.org/RPM-GPG-KEY-MariaDB"
+      gpgkey: "http://mirror.mariadb.org/yum/RPM-GPG-KEY-MariaDB"
+      state: "present"
+    - file: "home:alvistack"
+      name: "home_alvistack"
+      description: "home:alvistack (Fedora_Rawhide)"
+      baseurl: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/Fedora_Rawhide"
+      enabled: true
+      priority: "2"
+      module_hotfixes: true
+      gpgcheck: true
+      gpgkey: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/Fedora_Rawhide/repodata/repomd.xml.key"
+      state: "present"
+  "10.7":
+    - file: "mariadb"
+      name: "mariadb"
+      description: "MariaDB"
+      baseurl: "http://mirror.mariadb.org/yum/10.7/fedora35-amd64"
+      enabled: true
+      priority: "2"
+      module_hotfixes: true
+      gpgcheck: true
+      gpgkey: "http://mirror.mariadb.org/yum/RPM-GPG-KEY-MariaDB"
       state: "present"
     - file: "home:alvistack"
       name: "home_alvistack"
@@ -63,33 +84,12 @@ _yum_repository:
     - file: "mariadb"
       name: "mariadb"
       description: "MariaDB"
-      baseurl: "http://yum.mariadb.org/10.6/fedora35-amd64"
+      baseurl: "http://mirror.mariadb.org/yum/10.6/fedora35-amd64"
       enabled: true
       priority: "2"
       module_hotfixes: true
       gpgcheck: true
-      gpgkey: "http://yum.mariadb.org/RPM-GPG-KEY-MariaDB"
-      state: "present"
-    - file: "home:alvistack"
-      name: "home_alvistack"
-      description: "home:alvistack (Fedora_Rawhide)"
-      baseurl: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/Fedora_Rawhide"
-      enabled: true
-      priority: "2"
-      module_hotfixes: true
-      gpgcheck: true
-      gpgkey: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/Fedora_Rawhide/repodata/repomd.xml.key"
-      state: "present"
-  "10.5":
-    - file: "mariadb"
-      name: "mariadb"
-      description: "MariaDB"
-      baseurl: "http://yum.mariadb.org/10.5/fedora35-amd64"
-      enabled: true
-      priority: "2"
-      module_hotfixes: true
-      gpgcheck: true
-      gpgkey: "http://yum.mariadb.org/RPM-GPG-KEY-MariaDB"
+      gpgkey: "http://mirror.mariadb.org/yum/RPM-GPG-KEY-MariaDB"
       state: "present"
     - file: "home:alvistack"
       name: "home_alvistack"
@@ -103,17 +103,17 @@ _yum_repository:
       state: "present"
 
 _yum:
+  "10.8":
+    - { state: "latest", name: "boost-devel" }
+    - { state: "latest", name: "MariaDB-server" }
+    - { state: "latest", name: "MariaDB-backup" }
+    - { state: "latest", name: "peer-finder" }
   "10.7":
     - { state: "latest", name: "boost-devel" }
     - { state: "latest", name: "MariaDB-server" }
     - { state: "latest", name: "MariaDB-backup" }
     - { state: "latest", name: "peer-finder" }
   "10.6":
-    - { state: "latest", name: "boost-devel" }
-    - { state: "latest", name: "MariaDB-server" }
-    - { state: "latest", name: "MariaDB-backup" }
-    - { state: "latest", name: "peer-finder" }
-  "10.5":
     - { state: "latest", name: "boost-devel" }
     - { state: "latest", name: "MariaDB-server" }
     - { state: "latest", name: "MariaDB-backup" }
