@@ -15,6 +15,15 @@
 # limitations under the License.
 
 _apt_key:
+  "10.8":
+    - keyring: "/etc/apt/trusted.gpg.d/mariadb.gpg"
+      url: "http://mariadb.org/mariadb_release_signing_key.asc"
+      id: "177F4010FE56CA3336300305F1656F24C74CD1D8"
+      state: "present"
+    - keyring: "/etc/apt/trusted.gpg.d/home_alvistack.gpg"
+      url: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_18.04/Release.key"
+      id: "789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD"
+      state: "present"
   "10.7":
     - keyring: "/etc/apt/trusted.gpg.d/mariadb.gpg"
       url: "http://mariadb.org/mariadb_release_signing_key.asc"
@@ -33,17 +42,15 @@ _apt_key:
       url: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_18.04/Release.key"
       id: "789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD"
       state: "present"
-  "10.5":
-    - keyring: "/etc/apt/trusted.gpg.d/mariadb.gpg"
-      url: "http://mariadb.org/mariadb_release_signing_key.asc"
-      id: "177F4010FE56CA3336300305F1656F24C74CD1D8"
-      state: "present"
-    - keyring: "/etc/apt/trusted.gpg.d/home_alvistack.gpg"
-      url: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_18.04/Release.key"
-      id: "789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD"
-      state: "present"
 
 _apt_repository:
+  "10.8":
+    - filename: "mariadb"
+      repo: "deb [arch=amd64] http://mirror.mariadb.org/repo/10.8/ubuntu bionic main"
+      state: "present"
+    - filename: "home:alvistack"
+      repo: "deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_18.04/ /"
+      state: "present"
   "10.7":
     - filename: "mariadb"
       repo: "deb [arch=amd64] http://mirror.mariadb.org/repo/10.7/ubuntu bionic main"
@@ -58,15 +65,14 @@ _apt_repository:
     - filename: "home:alvistack"
       repo: "deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_18.04/ /"
       state: "present"
-  "10.5":
-    - filename: "mariadb"
-      repo: "deb [arch=amd64] http://mirror.mariadb.org/repo/10.5/ubuntu bionic main"
-      state: "present"
-    - filename: "home:alvistack"
-      repo: "deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_18.04/ /"
-      state: "present"
 
 _apt:
+  "10.8":
+    - { state: "latest", name: "mysql-common" }
+    - { state: "latest", name: "mariadb-server-10.8" }
+    - { state: "latest", name: "mariadb-backup" }
+    - { state: "latest", name: "socat" }
+    - { state: "latest", name: "peer-finder" }
   "10.7":
     - { state: "latest", name: "mysql-common" }
     - { state: "latest", name: "mariadb-server-10.7" }
@@ -76,12 +82,6 @@ _apt:
   "10.6":
     - { state: "latest", name: "mysql-common" }
     - { state: "latest", name: "mariadb-server-10.6" }
-    - { state: "latest", name: "mariadb-backup" }
-    - { state: "latest", name: "socat" }
-    - { state: "latest", name: "peer-finder" }
-  "10.5":
-    - { state: "latest", name: "mysql-common" }
-    - { state: "latest", name: "mariadb-server-10.5" }
     - { state: "latest", name: "mariadb-backup" }
     - { state: "latest", name: "socat" }
     - { state: "latest", name: "peer-finder" }
