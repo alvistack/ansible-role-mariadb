@@ -46,21 +46,21 @@ _apt_key:
 _apt_repository:
   "10.8":
     - filename: "mariadb"
-      repo: "deb [arch=amd64] http://mirror.mariadb.org/repo/10.8/ubuntu kinetic main"
+      repo: "deb [arch=amd64] http://mirror.mariadb.org/repo/10.8/ubuntu jammy main"
       state: "present"
     - filename: "home:alvistack"
       repo: "deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_22.10/ /"
       state: "present"
   "10.7":
     - filename: "mariadb"
-      repo: "deb [arch=amd64] http://mirror.mariadb.org/repo/10.7/ubuntu kinetic main"
+      repo: "deb [arch=amd64] http://mirror.mariadb.org/repo/10.7/ubuntu jammy main"
       state: "present"
     - filename: "home:alvistack"
       repo: "deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_22.10/ /"
       state: "present"
   "10.6":
     - filename: "mariadb"
-      repo: "deb [arch=amd64] http://mirror.mariadb.org/repo/10.6/ubuntu kinetic main"
+      repo: "deb [arch=amd64] http://mirror.mariadb.org/repo/10.6/ubuntu jammy main"
       state: "present"
     - filename: "home:alvistack"
       repo: "deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_22.10/ /"
