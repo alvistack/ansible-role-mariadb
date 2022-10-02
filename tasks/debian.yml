@@ -15,7 +15,8 @@
 # limitations under the License.
 
 - name: dpkg --purge --force-depends mysql-common
-  ansible.builtin.command: dpkg --purge --force-depends mysql-common
+  ansible.builtin.command:
+    cmd: dpkg --purge --force-depends mysql-common
   args:
     removes: "/etc/mysql/my.cnf.fallback"
   register: result

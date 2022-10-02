@@ -20,6 +20,7 @@
   become: true
   tasks:
     - name: mariadb --version
-      ansible.builtin.command: mariadb --version
+      ansible.builtin.command:
+        cmd: mariadb --version
       register: result
       changed_when: result is not succeeded
