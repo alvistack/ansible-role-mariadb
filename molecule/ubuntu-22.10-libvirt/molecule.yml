@@ -36,11 +36,6 @@ platforms:
       - "nested = true"
     instance_raw_config_args:
       - "vm.box_check_update = false"
-lint: |
-  set -euxo pipefail
-  flake8
-  yamllint .
-  ansible-lint
 dependency:
   name: galaxy
   options:
