@@ -42,7 +42,7 @@ _yum_repository:
     - file: "mariadb"
       name: "mariadb"
       description: "MariaDB"
-      baseurl: "http://mirror.mariadb.org/yum/10.8/fedora36-amd64"
+      baseurl: "http://mirror.mariadb.org/yum/10.8/fedora37-amd64"
       enabled: true
       priority: "2"
       module_hotfixes: true
@@ -63,7 +63,7 @@ _yum_repository:
     - file: "mariadb"
       name: "mariadb"
       description: "MariaDB"
-      baseurl: "http://mirror.mariadb.org/yum/10.7/fedora36-amd64"
+      baseurl: "http://mirror.mariadb.org/yum/10.7/fedora37-amd64"
       enabled: true
       priority: "2"
       module_hotfixes: true
@@ -84,7 +84,7 @@ _yum_repository:
     - file: "mariadb"
       name: "mariadb"
       description: "MariaDB"
-      baseurl: "http://mirror.mariadb.org/yum/10.6/fedora36-amd64"
+      baseurl: "http://mirror.mariadb.org/yum/10.6/fedora37-amd64"
       enabled: true
       priority: "2"
       module_hotfixes: true
