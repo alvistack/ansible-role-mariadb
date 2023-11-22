@@ -15,14 +15,14 @@
 # limitations under the License.
 
 _rpm_key:
-  "10.8":
+  "11.1":
     - key: "http://mirror.mariadb.org/yum/RPM-GPG-KEY-MariaDB"
       fingerprint: "199369E5404BD5FC7D2FE43BCBCB082A1BB943DB"
       state: "present"
     - key: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/openSUSE_Tumbleweed/repodata/repomd.xml.key"
       fingerprint: "789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD"
       state: "present"
-  "10.7":
+  "10.11":
     - key: "http://mirror.mariadb.org/yum/RPM-GPG-KEY-MariaDB"
       fingerprint: "199369E5404BD5FC7D2FE43BCBCB082A1BB943DB"
       state: "present"
@@ -38,11 +38,11 @@ _rpm_key:
       state: "present"
 
 _yum_repository:
-  "10.8":
+  "11.1":
     - file: "mariadb"
       name: "mariadb"
       description: "MariaDB"
-      baseurl: "http://mirror.mariadb.org/yum/10.8/opensuse/15/x86_64"
+      baseurl: "http://mirror.mariadb.org/yum/11.1/opensuse/15/x86_64"
       enabled: true
       priority: "2"
       module_hotfixes: true
@@ -59,11 +59,11 @@ _yum_repository:
       gpgcheck: true
       gpgkey: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/openSUSE_Tumbleweed/repodata/repomd.xml.key"
       state: "present"
-  "10.7":
+  "10.11":
     - file: "mariadb"
       name: "mariadb"
       description: "MariaDB"
-      baseurl: "http://mirror.mariadb.org/yum/10.7/opensuse/15/x86_64"
+      baseurl: "http://mirror.mariadb.org/yum/10.11/opensuse/15/x86_64"
       enabled: true
       priority: "2"
       module_hotfixes: true
@@ -103,18 +103,18 @@ _yum_repository:
       state: "present"
 
 _zypper:
-  "10.8":
+  "11.1":
     - { state: "latest", name: "boost-devel" }
-    - { state: "latest", name: "MariaDB-server" }
-    - { state: "latest", name: "MariaDB-backup" }
+    - { state: "present", name: "MariaDB-server-{{ mariadb_version }}" }
+    - { state: "present", name: "MariaDB-backup-{{ mariadb_version }}" }
     - { state: "latest", name: "peer-finder" }
-  "10.7":
+  "10.11":
     - { state: "latest", name: "boost-devel" }
-    - { state: "latest", name: "MariaDB-server" }
-    - { state: "latest", name: "MariaDB-backup" }
+    - { state: "present", name: "MariaDB-server-{{ mariadb_version }}" }
+    - { state: "present", name: "MariaDB-backup-{{ mariadb_version }}" }
     - { state: "latest", name: "peer-finder" }
   "10.6":
     - { state: "latest", name: "boost-devel" }
-    - { state: "latest", name: "MariaDB-server" }
-    - { state: "latest", name: "MariaDB-backup" }
+    - { state: "present", name: "MariaDB-server-{{ mariadb_version }}" }
+    - { state: "present", name: "MariaDB-backup-{{ mariadb_version }}" }
     - { state: "latest", name: "peer-finder" }

@@ -15,7 +15,7 @@
 # limitations under the License.
 
 _apt_key:
-  "10.8":
+  "11.1":
     - keyring: "/etc/apt/trusted.gpg.d/mariadb.gpg"
       url: "http://mariadb.org/mariadb_release_signing_key.asc"
       id: "177F4010FE56CA3336300305F1656F24C74CD1D8"
@@ -24,7 +24,7 @@ _apt_key:
       url: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_23.04/Release.key"
       id: "789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD"
       state: "present"
-  "10.7":
+  "10.11":
     - keyring: "/etc/apt/trusted.gpg.d/mariadb.gpg"
       url: "http://mariadb.org/mariadb_release_signing_key.asc"
       id: "177F4010FE56CA3336300305F1656F24C74CD1D8"
@@ -44,16 +44,16 @@ _apt_key:
       state: "present"
 
 _apt_repository:
-  "10.8":
+  "11.1":
     - filename: "mariadb"
-      repo: "deb [arch=amd64] http://mirror.mariadb.org/repo/10.8/ubuntu jammy main"
+      repo: "deb [arch=amd64] http://mirror.mariadb.org/repo/11.1/ubuntu jammy main"
       state: "present"
     - filename: "home:alvistack"
       repo: "deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_23.04/ /"
       state: "present"
-  "10.7":
+  "10.11":
     - filename: "mariadb"
-      repo: "deb [arch=amd64] http://mirror.mariadb.org/repo/10.7/ubuntu jammy main"
+      repo: "deb [arch=amd64] http://mirror.mariadb.org/repo/10.11/ubuntu jammy main"
       state: "present"
     - filename: "home:alvistack"
       repo: "deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_23.04/ /"
@@ -67,21 +67,21 @@ _apt_repository:
       state: "present"
 
 _apt:
-  "10.8":
-    - { state: "latest", name: "mysql-common" }
-    - { state: "latest", name: "mariadb-server-10.8" }
-    - { state: "latest", name: "mariadb-backup" }
+  "11.1":
+    - { state: "present", name: "mysql-common=1:{{ mariadb_version }}*" }
+    - { state: "present", name: "mariadb-server=1:{{ mariadb_version }}*" }
+    - { state: "present", name: "mariadb-backup=1:{{ mariadb_version }}*" }
     - { state: "latest", name: "socat" }
     - { state: "latest", name: "peer-finder" }
-  "10.7":
-    - { state: "latest", name: "mysql-common" }
-    - { state: "latest", name: "mariadb-server-10.7" }
-    - { state: "latest", name: "mariadb-backup" }
+  "10.11":
+    - { state: "present", name: "mysql-common=1:{{ mariadb_version }}*" }
+    - { state: "present", name: "mariadb-server=1:{{ mariadb_version }}*" }
+    - { state: "present", name: "mariadb-backup=1:{{ mariadb_version }}*" }
     - { state: "latest", name: "socat" }
     - { state: "latest", name: "peer-finder" }
   "10.6":
-    - { state: "latest", name: "mysql-common" }
-    - { state: "latest", name: "mariadb-server-10.6" }
-    - { state: "latest", name: "mariadb-backup" }
+    - { state: "present", name: "mysql-common=1:{{ mariadb_version }}*" }
+    - { state: "present", name: "mariadb-server=1:{{ mariadb_version }}*" }
+    - { state: "present", name: "mariadb-backup=1:{{ mariadb_version }}*" }
     - { state: "latest", name: "socat" }
     - { state: "latest", name: "peer-finder" }
