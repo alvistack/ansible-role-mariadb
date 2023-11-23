@@ -46,21 +46,21 @@ _apt_key:
 _apt_repository:
   "11.1":
     - filename: "mariadb"
-      repo: "deb [arch=amd64] http://mirror.mariadb.org/repo/11.1/debian sid main"
+      repo: "deb [arch=amd64] http://mirror.mariadb.org/repo/11.1/debian bookworm main"
       state: "present"
     - filename: "home:alvistack"
       repo: "deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_12/ /"
       state: "present"
   "10.11":
     - filename: "mariadb"
-      repo: "deb [arch=amd64] http://mirror.mariadb.org/repo/10.11/debian sid main"
+      repo: "deb [arch=amd64] http://mirror.mariadb.org/repo/10.11/debian bookworm main"
       state: "present"
     - filename: "home:alvistack"
       repo: "deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_12/ /"
       state: "present"
   "10.6":
     - filename: "mariadb"
-      repo: "deb [arch=amd64] http://mirror.mariadb.org/repo/10.6/debian sid main"
+      repo: "deb [arch=amd64] http://mirror.mariadb.org/repo/10.6/debian bookworm main"
       state: "present"
     - filename: "home:alvistack"
       repo: "deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_12/ /"
