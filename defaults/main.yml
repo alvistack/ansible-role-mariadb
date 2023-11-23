@@ -15,7 +15,7 @@
 # limitations under the License.
 
 # MariaDB release.
-mariadb_release: "11.1"
+mariadb_release: "{{ _mariadb_release }}"
 
 # MariaDB version.
 mariadb_version: "{{ _mariadb_version[mariadb_release] }}"
