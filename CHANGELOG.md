@@ -2,6 +2,12 @@
 
 ## 9.1.0 - TBC
 
+-   Support version pinning
+-   Support MariaDB 11.1
+-   Support MariaDB 10.11
+-   Remove MariaDB 10.8 support
+-   Remove MariaDB 10.7 support
+
 ## 9.0.0 - 2023-11-08
 
 -   Support Ansible community package 9.0.0
