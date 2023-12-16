@@ -2,6 +2,7 @@
 
 ## 9.1.0 - TBC
 
+-   Remove openSUSE Leap 15.4 support
 -   Support version pinning
 -   Support MariaDB 11.1
 -   Support MariaDB 10.11
