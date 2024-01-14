@@ -2,6 +2,8 @@
 
 ## 9.2.0 - TBC
 
+-   Support MariaDB 11.2
+-   Remove MariaDB 11.1 support
 -   Remove Ubuntu 23.04 support
 
 ## 9.1.0 - 2023-12-25
