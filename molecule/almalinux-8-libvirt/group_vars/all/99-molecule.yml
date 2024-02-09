@@ -13,8 +13,3 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
-_mariadb_version:
-  "11.2": "11.2.3"
-  "10.11": "10.11.7"
-  "10.6": "10.6.17"
