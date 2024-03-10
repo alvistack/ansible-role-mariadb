@@ -14,10 +14,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-_mariadb_release: "11.2"
+_mariadb_release: "11.3"
 
 _apt_key:
-  "11.2":
+  "11.3":
     - keyring: "/etc/apt/trusted.gpg.d/mariadb.gpg"
       url: "http://mariadb.org/mariadb_release_signing_key.asc"
       id: "177F4010FE56CA3336300305F1656F24C74CD1D8"
@@ -46,9 +46,9 @@ _apt_key:
       state: "present"
 
 _apt_repository:
-  "11.2":
+  "11.3":
     - filename: "mariadb"
-      repo: "deb [arch=amd64] http://mirror.mariadb.org/repo/11.2/ubuntu jammy main"
+      repo: "deb [arch=amd64] http://mirror.mariadb.org/repo/11.3/ubuntu jammy main"
       state: "present"
     - filename: "home:alvistack"
       repo: "deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_23.10/ /"
@@ -69,7 +69,7 @@ _apt_repository:
       state: "present"
 
 _apt:
-  "11.2":
+  "11.3":
     - { state: "present", name: "mysql-common=1:{{ mariadb_version }}*" }
     - { state: "present", name: "mariadb-server=1:{{ mariadb_version }}*" }
     - { state: "present", name: "mariadb-backup=1:{{ mariadb_version }}*" }

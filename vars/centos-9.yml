@@ -14,10 +14,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-_mariadb_release: "11.2"
+_mariadb_release: "11.3"
 
 _rpm_key:
-  "11.2":
+  "11.3":
     - key: "http://mirror.mariadb.org/yum/RPM-GPG-KEY-MariaDB"
       fingerprint: "199369E5404BD5FC7D2FE43BCBCB082A1BB943DB"
       state: "present"
@@ -40,11 +40,11 @@ _rpm_key:
       state: "present"
 
 _yum_repository:
-  "11.2":
+  "11.3":
     - file: "mariadb"
       name: "mariadb"
       description: "MariaDB"
-      baseurl: "http://mirror.mariadb.org/yum/11.2/rhel9-amd64"
+      baseurl: "http://mirror.mariadb.org/yum/11.3/rhel9-amd64"
       enabled: true
       priority: "2"
       module_hotfixes: true
@@ -105,7 +105,7 @@ _yum_repository:
       state: "present"
 
 _yum:
-  "11.2":
+  "11.3":
     - { state: "latest", name: "boost-devel" }
     - { state: "present", name: "MariaDB-server-{{ mariadb_version }}*" }
     - { state: "present", name: "MariaDB-backup-{{ mariadb_version }}*" }
