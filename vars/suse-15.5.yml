@@ -18,105 +18,105 @@ _mariadb_release: "11.3"
 
 _rpm_key:
   "11.3":
-    - key: "http://mirror.mariadb.org/yum/RPM-GPG-KEY-MariaDB"
-      fingerprint: "199369E5404BD5FC7D2FE43BCBCB082A1BB943DB"
-      state: "present"
-    - key: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_15.5/repodata/repomd.xml.key"
-      fingerprint: "789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD"
-      state: "present"
+    - key: http://mirror.mariadb.org/yum/RPM-GPG-KEY-MariaDB
+      fingerprint: 199369E5404BD5FC7D2FE43BCBCB082A1BB943DB
+      state: present
+    - key: http://downloadcontent.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_15.5/repodata/repomd.xml.key
+      fingerprint: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
+      state: present
   "10.11":
-    - key: "http://mirror.mariadb.org/yum/RPM-GPG-KEY-MariaDB"
-      fingerprint: "199369E5404BD5FC7D2FE43BCBCB082A1BB943DB"
-      state: "present"
-    - key: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_15.5/repodata/repomd.xml.key"
-      fingerprint: "789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD"
-      state: "present"
+    - key: http://mirror.mariadb.org/yum/RPM-GPG-KEY-MariaDB
+      fingerprint: 199369E5404BD5FC7D2FE43BCBCB082A1BB943DB
+      state: present
+    - key: http://downloadcontent.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_15.5/repodata/repomd.xml.key
+      fingerprint: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
+      state: present
   "10.6":
-    - key: "http://mirror.mariadb.org/yum/RPM-GPG-KEY-MariaDB"
-      fingerprint: "199369E5404BD5FC7D2FE43BCBCB082A1BB943DB"
-      state: "present"
-    - key: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_15.5/repodata/repomd.xml.key"
-      fingerprint: "789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD"
-      state: "present"
+    - key: http://mirror.mariadb.org/yum/RPM-GPG-KEY-MariaDB
+      fingerprint: 199369E5404BD5FC7D2FE43BCBCB082A1BB943DB
+      state: present
+    - key: http://downloadcontent.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_15.5/repodata/repomd.xml.key
+      fingerprint: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
+      state: present
 
 _yum_repository:
   "11.3":
-    - file: "mariadb"
-      name: "mariadb"
-      description: "MariaDB"
-      baseurl: "http://mirror.mariadb.org/yum/11.3/opensuse15-amd64"
+    - file: mariadb
+      name: mariadb
+      description: MariaDB
+      baseurl: http://mirror.mariadb.org/yum/11.3/opensuse15-amd64
       enabled: true
       priority: "2"
       module_hotfixes: true
       gpgcheck: true
-      gpgkey: "http://mirror.mariadb.org/yum/RPM-GPG-KEY-MariaDB"
-      state: "present"
-    - file: "home_alvistack"
-      name: "home_alvistack"
-      description: "home:alvistack (openSUSE_Leap_15.5)"
-      baseurl: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_15.5"
+      gpgkey: http://mirror.mariadb.org/yum/RPM-GPG-KEY-MariaDB
+      state: present
+    - file: home_alvistack
+      name: home_alvistack
+      description: home:alvistack (openSUSE_Leap_15.5)
+      baseurl: http://downloadcontent.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_15.5
       enabled: true
       priority: "2"
       module_hotfixes: true
       gpgcheck: true
-      gpgkey: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_15.5/repodata/repomd.xml.key"
-      state: "present"
+      gpgkey: http://downloadcontent.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_15.5/repodata/repomd.xml.key
+      state: present
   "10.11":
-    - file: "mariadb"
-      name: "mariadb"
-      description: "MariaDB"
-      baseurl: "http://mirror.mariadb.org/yum/10.11/opensuse15-amd64"
+    - file: mariadb
+      name: mariadb
+      description: MariaDB
+      baseurl: http://mirror.mariadb.org/yum/10.11/opensuse15-amd64
       enabled: true
       priority: "2"
       module_hotfixes: true
       gpgcheck: true
-      gpgkey: "http://mirror.mariadb.org/yum/RPM-GPG-KEY-MariaDB"
-      state: "present"
-    - file: "home_alvistack"
-      name: "home_alvistack"
-      description: "home:alvistack (openSUSE_Leap_15.5)"
-      baseurl: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_15.5"
+      gpgkey: http://mirror.mariadb.org/yum/RPM-GPG-KEY-MariaDB
+      state: present
+    - file: home_alvistack
+      name: home_alvistack
+      description: home:alvistack (openSUSE_Leap_15.5)
+      baseurl: http://downloadcontent.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_15.5
       enabled: true
       priority: "2"
       module_hotfixes: true
       gpgcheck: true
-      gpgkey: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_15.5/repodata/repomd.xml.key"
-      state: "present"
+      gpgkey: http://downloadcontent.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_15.5/repodata/repomd.xml.key
+      state: present
   "10.6":
-    - file: "mariadb"
-      name: "mariadb"
-      description: "MariaDB"
-      baseurl: "http://mirror.mariadb.org/yum/10.6/opensuse15-amd64"
+    - file: mariadb
+      name: mariadb
+      description: MariaDB
+      baseurl: http://mirror.mariadb.org/yum/10.6/opensuse15-amd64
       enabled: true
       priority: "2"
       module_hotfixes: true
       gpgcheck: true
-      gpgkey: "http://mirror.mariadb.org/yum/RPM-GPG-KEY-MariaDB"
-      state: "present"
-    - file: "home_alvistack"
-      name: "home_alvistack"
-      description: "home:alvistack (openSUSE_Leap_15.5)"
-      baseurl: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_15.5"
+      gpgkey: http://mirror.mariadb.org/yum/RPM-GPG-KEY-MariaDB
+      state: present
+    - file: home_alvistack
+      name: home_alvistack
+      description: home:alvistack (openSUSE_Leap_15.5)
+      baseurl: http://downloadcontent.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_15.5
       enabled: true
       priority: "2"
       module_hotfixes: true
       gpgcheck: true
-      gpgkey: "http://downloadcontent.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_15.5/repodata/repomd.xml.key"
-      state: "present"
+      gpgkey: http://downloadcontent.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_15.5/repodata/repomd.xml.key
+      state: present
 
 _zypper:
   "11.3":
-    - { state: "latest", name: "boost-devel" }
-    - { state: "present", name: "MariaDB-server-{{ mariadb_version }}" }
-    - { state: "present", name: "MariaDB-backup-{{ mariadb_version }}" }
-    - { state: "latest", name: "peer-finder" }
+    - { state: latest, name: boost-devel }
+    - { state: present, name: "MariaDB-server-{{ mariadb_version }}" }
+    - { state: present, name: "MariaDB-backup-{{ mariadb_version }}" }
+    - { state: latest, name: peer-finder }
   "10.11":
-    - { state: "latest", name: "boost-devel" }
-    - { state: "present", name: "MariaDB-server-{{ mariadb_version }}" }
-    - { state: "present", name: "MariaDB-backup-{{ mariadb_version }}" }
-    - { state: "latest", name: "peer-finder" }
+    - { state: latest, name: boost-devel }
+    - { state: present, name: "MariaDB-server-{{ mariadb_version }}" }
+    - { state: present, name: "MariaDB-backup-{{ mariadb_version }}" }
+    - { state: latest, name: peer-finder }
   "10.6":
-    - { state: "latest", name: "boost-devel" }
-    - { state: "present", name: "MariaDB-server-{{ mariadb_version }}" }
-    - { state: "present", name: "MariaDB-backup-{{ mariadb_version }}" }
-    - { state: "latest", name: "peer-finder" }
+    - { state: latest, name: boost-devel }
+    - { state: present, name: "MariaDB-server-{{ mariadb_version }}" }
+    - { state: present, name: "MariaDB-backup-{{ mariadb_version }}" }
+    - { state: latest, name: peer-finder }
