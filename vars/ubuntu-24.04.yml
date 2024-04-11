@@ -23,7 +23,7 @@ _apt_key:
       id: 177F4010FE56CA3336300305F1656F24C74CD1D8
       state: present
     - keyring: /etc/apt/trusted.gpg.d/home_alvistack.gpg
-      url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_Testing/Release.key
+      url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.04/Release.key
       id: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
       state: present
   "10.11":
@@ -32,7 +32,7 @@ _apt_key:
       id: 177F4010FE56CA3336300305F1656F24C74CD1D8
       state: present
     - keyring: /etc/apt/trusted.gpg.d/home_alvistack.gpg
-      url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_Testing/Release.key
+      url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.04/Release.key
       id: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
       state: present
   "10.6":
@@ -41,31 +41,31 @@ _apt_key:
       id: 177F4010FE56CA3336300305F1656F24C74CD1D8
       state: present
     - keyring: /etc/apt/trusted.gpg.d/home_alvistack.gpg
-      url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_Testing/Release.key
+      url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.04/Release.key
       id: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
       state: present
 
 _apt_repository:
   "11.3":
     - filename: mariadb
-      repo: deb [arch=amd64] http://mirror.mariadb.org/repo/11.3/debian sid main
+      repo: deb [arch=amd64] http://mirror.mariadb.org/repo/11.3/ubuntu jammy main
       state: present
     - filename: home:alvistack
-      repo: deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_Testing/ /
+      repo: deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.04/ /
       state: present
   "10.11":
     - filename: mariadb
-      repo: deb [arch=amd64] http://mirror.mariadb.org/repo/10.11/debian sid main
+      repo: deb [arch=amd64] http://mirror.mariadb.org/repo/10.11/ubuntu jammy main
       state: present
     - filename: home:alvistack
-      repo: deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_Testing/ /
+      repo: deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.04/ /
       state: present
   "10.6":
     - filename: mariadb
-      repo: deb [arch=amd64] http://mirror.mariadb.org/repo/10.6/debian sid main
+      repo: deb [arch=amd64] http://mirror.mariadb.org/repo/10.6/ubuntu jammy main
       state: present
     - filename: home:alvistack
-      repo: deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_Testing/ /
+      repo: deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.04/ /
       state: present
 
 _apt:
