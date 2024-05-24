@@ -15,6 +15,6 @@
 # limitations under the License.
 
 _mariadb_version:
-  "11.2": 11.2.2
+  "11.2": 11.2.4
   "10.11": 10.11.8
   "10.6": 10.6.18
