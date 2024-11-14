@@ -44,7 +44,6 @@ _apt_key:
       url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.04/Release.key
       id: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
       state: present
-  "10.6": []
 
 _apt_repository:
   "11.5":
@@ -68,7 +67,6 @@ _apt_repository:
     - filename: home:alvistack
       repo: deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.04/ /
       state: present
-  "10.6": []
 
 _apt:
   "11.5":
@@ -89,4 +87,3 @@ _apt:
     - { state: present, name: "mariadb-backup=1:{{ mariadb_version }}*" }
     - { state: latest, name: socat }
     - { state: latest, name: peer-finder }
-  "10.6": []
