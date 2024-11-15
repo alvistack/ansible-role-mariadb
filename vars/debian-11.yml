@@ -14,10 +14,19 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-_mariadb_release: "11.2"
+_mariadb_release: "11.5"
 
 _apt_key:
-  "11.2":
+  "11.5":
+    - keyring: /etc/apt/trusted.gpg.d/mariadb.gpg
+      url: http://mariadb.org/mariadb_release_signing_key.asc
+      id: 177F4010FE56CA3336300305F1656F24C74CD1D8
+      state: present
+    - keyring: /etc/apt/trusted.gpg.d/home_alvistack.gpg
+      url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_11/Release.key
+      id: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
+      state: present
+  "11.4":
     - keyring: /etc/apt/trusted.gpg.d/mariadb.gpg
       url: http://mariadb.org/mariadb_release_signing_key.asc
       id: 177F4010FE56CA3336300305F1656F24C74CD1D8
@@ -35,20 +44,11 @@ _apt_key:
       url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_11/Release.key
       id: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
       state: present
-  "10.6":
-    - keyring: /etc/apt/trusted.gpg.d/mariadb.gpg
-      url: http://mariadb.org/mariadb_release_signing_key.asc
-      id: 177F4010FE56CA3336300305F1656F24C74CD1D8
-      state: present
-    - keyring: /etc/apt/trusted.gpg.d/home_alvistack.gpg
-      url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_11/Release.key
-      id: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
-      state: present
 
 _apt_repository:
-  "11.2":
+  "11.5":
     - filename: mariadb
-      repo: deb [arch=amd64] http://mirror.mariadb.org/repo/11.2/debian bullseye main
+      repo: deb [arch=amd64] http://mirror.mariadb.org/repo/11.5/debian bullseye main
       state: present
     - filename: home:alvistack
       repo: deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_11/ /
@@ -60,28 +60,21 @@ _apt_repository:
     - filename: home:alvistack
       repo: deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_11/ /
       state: present
-  "10.6":
-    - filename: mariadb
-      repo: deb [arch=amd64] http://mirror.mariadb.org/repo/10.6/debian bullseye main
-      state: present
-    - filename: home:alvistack
-      repo: deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_11/ /
-      state: present
 
 _apt:
-  "11.2":
+  "11.5":
+    - { state: present, name: "mysql-common=1:{{ mariadb_version }}*" }
+    - { state: present, name: "mariadb-server=1:{{ mariadb_version }}*" }
+    - { state: present, name: "mariadb-backup=1:{{ mariadb_version }}*" }
+    - { state: latest, name: socat }
+    - { state: latest, name: peer-finder }
+  "11.4":
     - { state: present, name: "mysql-common=1:{{ mariadb_version }}*" }
     - { state: present, name: "mariadb-server=1:{{ mariadb_version }}*" }
     - { state: present, name: "mariadb-backup=1:{{ mariadb_version }}*" }
     - { state: latest, name: socat }
     - { state: latest, name: peer-finder }
   "10.11":
-    - { state: present, name: "mysql-common=1:{{ mariadb_version }}*" }
-    - { state: present, name: "mariadb-server=1:{{ mariadb_version }}*" }
-    - { state: present, name: "mariadb-backup=1:{{ mariadb_version }}*" }
-    - { state: latest, name: socat }
-    - { state: latest, name: peer-finder }
-  "10.6":
     - { state: present, name: "mysql-common=1:{{ mariadb_version }}*" }
     - { state: present, name: "mariadb-server=1:{{ mariadb_version }}*" }
     - { state: present, name: "mariadb-backup=1:{{ mariadb_version }}*" }
