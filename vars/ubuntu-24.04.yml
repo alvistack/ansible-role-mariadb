@@ -14,7 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-_mariadb_release: "11.5"
+_mariadb_release: "11.4"
 
 _apt_key:
   "11.5":
