@@ -17,7 +17,7 @@
 _mariadb_release: "11.4"
 
 _apt_key:
-  "11.5":
+  "11.6":
     - keyring: /etc/apt/trusted.gpg.d/mariadb.gpg
       url: http://mariadb.org/mariadb_release_signing_key.asc
       id: 177F4010FE56CA3336300305F1656F24C74CD1D8
@@ -46,9 +46,9 @@ _apt_key:
       state: present
 
 _apt_repository:
-  "11.5":
+  "11.6":
     - filename: mariadb
-      repo: deb [arch=amd64] http://mirror.mariadb.org/repo/11.5/ubuntu focal main
+      repo: deb [arch=amd64] http://mirror.mariadb.org/repo/11.6/ubuntu focal main
       state: present
     - filename: home:alvistack
       repo: deb http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_20.04/ /
@@ -69,7 +69,7 @@ _apt_repository:
       state: present
 
 _apt:
-  "11.5":
+  "11.6":
     - { state: present, name: "mysql-common=1:{{ mariadb_version }}*" }
     - { state: present, name: "mariadb-server=1:{{ mariadb_version }}*" }
     - { state: present, name: "mariadb-backup=1:{{ mariadb_version }}*" }
