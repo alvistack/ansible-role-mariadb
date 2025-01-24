@@ -22,21 +22,21 @@ _apt_key:
       dest: /etc/apt/keyrings/mariadb.asc
       checksum: "sha256:00adb387f4c12e8982cfc28165d225695621494354cd58108c6845063bfb74b5"
     - url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.10/Release.key
-      dest: /etc/apt/keyrings/home_alvistack.asc
+      dest: /etc/apt/keyrings/home-alvistack.asc
       checksum: "sha256:90b960d05e9c5f068f70a6afa1c2623c400312f4e719bd97719d85e49b7de2b2"
   "11.4":
     - url: http://mariadb.org/mariadb_release_signing_key.asc
       dest: /etc/apt/keyrings/mariadb.asc
       checksum: "sha256:00adb387f4c12e8982cfc28165d225695621494354cd58108c6845063bfb74b5"
     - url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.10/Release.key
-      dest: /etc/apt/keyrings/home_alvistack.asc
+      dest: /etc/apt/keyrings/home-alvistack.asc
       checksum: "sha256:90b960d05e9c5f068f70a6afa1c2623c400312f4e719bd97719d85e49b7de2b2"
   "10.11":
     - url: http://mariadb.org/mariadb_release_signing_key.asc
       dest: /etc/apt/keyrings/mariadb.asc
       checksum: "sha256:00adb387f4c12e8982cfc28165d225695621494354cd58108c6845063bfb74b5"
     - url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.10/Release.key
-      dest: /etc/apt/keyrings/home_alvistack.asc
+      dest: /etc/apt/keyrings/home-alvistack.asc
       checksum: "sha256:90b960d05e9c5f068f70a6afa1c2623c400312f4e719bd97719d85e49b7de2b2"
 
 _deb822_repository:
@@ -50,12 +50,12 @@ _deb822_repository:
       architectures: amd64
       enabled: true
       state: present
-    - name: home_alvistack
+    - name: home-alvistack
       types: deb
       uris: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.10
       suites: /
       components:
-      signed_by: /etc/apt/keyrings/home_alvistack.asc
+      signed_by: /etc/apt/keyrings/home-alvistack.asc
       enabled: true
       state: present
   "11.4":
@@ -68,12 +68,12 @@ _deb822_repository:
       architectures: amd64
       enabled: true
       state: present
-    - name: home_alvistack
+    - name: home-alvistack
       types: deb
       uris: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.10
       suites: /
       components:
-      signed_by: /etc/apt/keyrings/home_alvistack.asc
+      signed_by: /etc/apt/keyrings/home-alvistack.asc
       enabled: true
       state: present
   "10.11":
@@ -86,12 +86,12 @@ _deb822_repository:
       architectures: amd64
       enabled: true
       state: present
-    - name: home_alvistack
+    - name: home-alvistack
       types: deb
       uris: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.10
       suites: /
       components:
-      signed_by: /etc/apt/keyrings/home_alvistack.asc
+      signed_by: /etc/apt/keyrings/home-alvistack.asc
       enabled: true
       state: present
 
