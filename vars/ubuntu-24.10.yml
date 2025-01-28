@@ -16,6 +16,29 @@
 
 _mariadb_release: "11.4"
 
+_apt_key:
+  "11.6":
+    - url: http://mariadb.org/mariadb_release_signing_key.asc
+      dest: /etc/apt/keyrings/mariadb.asc
+      checksum: "sha256:00adb387f4c12e8982cfc28165d225695621494354cd58108c6845063bfb74b5"
+    - url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.10/Release.key
+      dest: /etc/apt/keyrings/home-alvistack.asc
+      checksum: "sha256:90b960d05e9c5f068f70a6afa1c2623c400312f4e719bd97719d85e49b7de2b2"
+  "11.4":
+    - url: http://mariadb.org/mariadb_release_signing_key.asc
+      dest: /etc/apt/keyrings/mariadb.asc
+      checksum: "sha256:00adb387f4c12e8982cfc28165d225695621494354cd58108c6845063bfb74b5"
+    - url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.10/Release.key
+      dest: /etc/apt/keyrings/home-alvistack.asc
+      checksum: "sha256:90b960d05e9c5f068f70a6afa1c2623c400312f4e719bd97719d85e49b7de2b2"
+  "10.11":
+    - url: http://mariadb.org/mariadb_release_signing_key.asc
+      dest: /etc/apt/keyrings/mariadb.asc
+      checksum: "sha256:00adb387f4c12e8982cfc28165d225695621494354cd58108c6845063bfb74b5"
+    - url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.10/Release.key
+      dest: /etc/apt/keyrings/home-alvistack.asc
+      checksum: "sha256:90b960d05e9c5f068f70a6afa1c2623c400312f4e719bd97719d85e49b7de2b2"
+
 _deb822_repository:
   "11.6":
     - name: mariadb
@@ -23,16 +46,16 @@ _deb822_repository:
       uris: http://mirror.mariadb.org/repo/11.6/ubuntu
       suites: oracular
       components: main
-      signed_by: http://mariadb.org/mariadb_release_signing_key.asc
+      signed_by: /etc/apt/keyrings/mariadb.asc
       architectures: amd64
       enabled: true
       state: present
-    - name: alvistack
+    - name: home-alvistack
       types: deb
       uris: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.10
       suites: /
       components:
-      signed_by: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.10/Release.key
+      signed_by: /etc/apt/keyrings/home-alvistack.asc
       enabled: true
       state: present
   "11.4":
@@ -41,16 +64,16 @@ _deb822_repository:
       uris: http://mirror.mariadb.org/repo/11.4/ubuntu
       suites: oracular
       components: main
-      signed_by: http://mariadb.org/mariadb_release_signing_key.asc
+      signed_by: /etc/apt/keyrings/mariadb.asc
       architectures: amd64
       enabled: true
       state: present
-    - name: alvistack
+    - name: home-alvistack
       types: deb
       uris: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.10
       suites: /
       components:
-      signed_by: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.10/Release.key
+      signed_by: /etc/apt/keyrings/home-alvistack.asc
       enabled: true
       state: present
   "10.11":
@@ -59,16 +82,16 @@ _deb822_repository:
       uris: http://mirror.mariadb.org/repo/10.11/ubuntu
       suites: oracular
       components: main
-      signed_by: http://mariadb.org/mariadb_release_signing_key.asc
+      signed_by: /etc/apt/keyrings/mariadb.asc
       architectures: amd64
       enabled: true
       state: present
-    - name: alvistack
+    - name: home-alvistack
       types: deb
       uris: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.10
       suites: /
       components:
-      signed_by: http://downloadcontent.opensuse.org/repositories/home:/alvistack/xUbuntu_24.10/Release.key
+      signed_by: /etc/apt/keyrings/home-alvistack.asc
       enabled: true
       state: present
 
