@@ -44,7 +44,7 @@ _yum_repository:
     - file: mariadb
       name: mariadb
       description: MariaDB
-      baseurl: http://mirror.mariadb.org/yum/11.6/almalinux9-amd64
+      baseurl: http://mirror.mariadb.org/yum/11.6/rhel9-amd64
       enabled: true
       priority: "2"
       module_hotfixes: true
@@ -65,7 +65,7 @@ _yum_repository:
     - file: mariadb
       name: mariadb
       description: MariaDB
-      baseurl: http://mirror.mariadb.org/yum/11.4/almalinux9-amd64
+      baseurl: http://mirror.mariadb.org/yum/11.4/rhel9-amd64
       enabled: true
       priority: "2"
       module_hotfixes: true
@@ -86,7 +86,7 @@ _yum_repository:
     - file: mariadb
       name: mariadb
       description: MariaDB
-      baseurl: http://mirror.mariadb.org/yum/10.11/almalinux9-amd64
+      baseurl: http://mirror.mariadb.org/yum/10.11/rhel9-amd64
       enabled: true
       priority: "2"
       module_hotfixes: true
