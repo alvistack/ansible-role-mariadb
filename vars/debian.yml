@@ -18,24 +18,24 @@ _mariadb_release: "11.4"
 
 _apt_key:
   "11.7":
-    - url: http://mariadb.org/mariadb_release_signing_key.asc
+    - url: https://mariadb.org/mariadb_release_signing_key.asc
       dest: /etc/apt/keyrings/mariadb.asc
       checksum: "sha256:00adb387f4c12e8982cfc28165d225695621494354cd58108c6845063bfb74b5"
-    - url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_Testing/Release.key
+    - url: https://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_Testing/Release.key
       dest: /etc/apt/keyrings/home-alvistack.asc
       checksum: "sha256:90b960d05e9c5f068f70a6afa1c2623c400312f4e719bd97719d85e49b7de2b2"
   "11.4":
-    - url: http://mariadb.org/mariadb_release_signing_key.asc
+    - url: https://mariadb.org/mariadb_release_signing_key.asc
       dest: /etc/apt/keyrings/mariadb.asc
       checksum: "sha256:00adb387f4c12e8982cfc28165d225695621494354cd58108c6845063bfb74b5"
-    - url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_Testing/Release.key
+    - url: https://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_Testing/Release.key
       dest: /etc/apt/keyrings/home-alvistack.asc
       checksum: "sha256:90b960d05e9c5f068f70a6afa1c2623c400312f4e719bd97719d85e49b7de2b2"
   "10.11":
-    - url: http://mariadb.org/mariadb_release_signing_key.asc
+    - url: https://mariadb.org/mariadb_release_signing_key.asc
       dest: /etc/apt/keyrings/mariadb.asc
       checksum: "sha256:00adb387f4c12e8982cfc28165d225695621494354cd58108c6845063bfb74b5"
-    - url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_Testing/Release.key
+    - url: https://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_Testing/Release.key
       dest: /etc/apt/keyrings/home-alvistack.asc
       checksum: "sha256:90b960d05e9c5f068f70a6afa1c2623c400312f4e719bd97719d85e49b7de2b2"
 
@@ -43,7 +43,7 @@ _deb822_repository:
   "11.7":
     - name: mariadb
       types: deb
-      uris: http://mirror.mariadb.org/repo/11.7/debian
+      uris: https://mirror.mariadb.org/repo/11.7/debian
       suites: sid
       components: main
       signed_by: /etc/apt/keyrings/mariadb.asc
@@ -52,7 +52,7 @@ _deb822_repository:
       state: present
     - name: home-alvistack
       types: deb
-      uris: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_Testing
+      uris: https://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_Testing
       suites: /
       components:
       signed_by: /etc/apt/keyrings/home-alvistack.asc
@@ -61,7 +61,7 @@ _deb822_repository:
   "11.4":
     - name: mariadb
       types: deb
-      uris: http://mirror.mariadb.org/repo/11.4/debian
+      uris: https://mirror.mariadb.org/repo/11.4/debian
       suites: sid
       components: main
       signed_by: /etc/apt/keyrings/mariadb.asc
@@ -70,7 +70,7 @@ _deb822_repository:
       state: present
     - name: home-alvistack
       types: deb
-      uris: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_Testing
+      uris: https://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_Testing
       suites: /
       components:
       signed_by: /etc/apt/keyrings/home-alvistack.asc
@@ -79,7 +79,7 @@ _deb822_repository:
   "10.11":
     - name: mariadb
       types: deb
-      uris: http://mirror.mariadb.org/repo/10.11/debian
+      uris: https://mirror.mariadb.org/repo/10.11/debian
       suites: sid
       components: main
       signed_by: /etc/apt/keyrings/mariadb.asc
@@ -88,7 +88,7 @@ _deb822_repository:
       state: present
     - name: home-alvistack
       types: deb
-      uris: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_Testing
+      uris: https://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_Testing
       suites: /
       components:
       signed_by: /etc/apt/keyrings/home-alvistack.asc
