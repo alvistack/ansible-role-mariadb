@@ -14,10 +14,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-_mariadb_release: "11.4"
+_mariadb_release: "11.8"
 
 _rpm_key:
-  "11.7":
+  "12.0":
+    - key: http://mirror.mariadb.org/yum/RPM-GPG-KEY-MariaDB
+      fingerprint: 199369E5404BD5FC7D2FE43BCBCB082A1BB943DB
+      state: present
+    - key: http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_9_Stream/repodata/repomd.xml.key
+      fingerprint: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
+      state: present
+  "11.8":
     - key: http://mirror.mariadb.org/yum/RPM-GPG-KEY-MariaDB
       fingerprint: 199369E5404BD5FC7D2FE43BCBCB082A1BB943DB
       state: present
@@ -31,20 +38,34 @@ _rpm_key:
     - key: http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_9_Stream/repodata/repomd.xml.key
       fingerprint: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
       state: present
-  "10.11":
-    - key: http://mirror.mariadb.org/yum/RPM-GPG-KEY-MariaDB
-      fingerprint: 199369E5404BD5FC7D2FE43BCBCB082A1BB943DB
-      state: present
-    - key: http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_9_Stream/repodata/repomd.xml.key
-      fingerprint: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
-      state: present
 
 _yum_repository:
-  "11.7":
+  "12.0":
     - file: mariadb
       name: mariadb
       description: MariaDB
-      baseurl: http://mirror.mariadb.org/yum/11.7/rhel9-amd64
+      baseurl: http://mirror.mariadb.org/yum/12.0/rhel9-amd64
+      enabled: true
+      priority: "2"
+      module_hotfixes: true
+      gpgcheck: true
+      gpgkey: http://mirror.mariadb.org/yum/RPM-GPG-KEY-MariaDB
+      state: present
+    - file: home:alvistack
+      name: home_alvistack
+      description: home:alvistack (CentOS_9_Stream)
+      baseurl: http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_9_Stream
+      enabled: true
+      priority: "2"
+      module_hotfixes: true
+      gpgcheck: true
+      gpgkey: http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_9_Stream/repodata/repomd.xml.key
+      state: present
+  "11.8":
+    - file: mariadb
+      name: mariadb
+      description: MariaDB
+      baseurl: http://mirror.mariadb.org/yum/11.8/rhel9-amd64
       enabled: true
       priority: "2"
       module_hotfixes: true
@@ -82,40 +103,19 @@ _yum_repository:
       gpgcheck: true
       gpgkey: http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_9_Stream/repodata/repomd.xml.key
       state: present
-  "10.11":
-    - file: mariadb
-      name: mariadb
-      description: MariaDB
-      baseurl: http://mirror.mariadb.org/yum/10.11/rhel9-amd64
-      enabled: true
-      priority: "2"
-      module_hotfixes: true
-      gpgcheck: true
-      gpgkey: http://mirror.mariadb.org/yum/RPM-GPG-KEY-MariaDB
-      state: present
-    - file: home:alvistack
-      name: home_alvistack
-      description: home:alvistack (CentOS_9_Stream)
-      baseurl: http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_9_Stream
-      enabled: true
-      priority: "2"
-      module_hotfixes: true
-      gpgcheck: true
-      gpgkey: http://downloadcontent.opensuse.org/repositories/home:/alvistack/CentOS_9_Stream/repodata/repomd.xml.key
-      state: present
 
 _yum:
-  "11.7":
+  "12.0":
+    - { state: latest, name: boost-devel }
+    - { state: present, name: "MariaDB-server-{{ mariadb_version }}*" }
+    - { state: present, name: "MariaDB-backup-{{ mariadb_version }}*" }
+    - { state: latest, name: peer-finder }
+  "11.8":
     - { state: latest, name: boost-devel }
     - { state: present, name: "MariaDB-server-{{ mariadb_version }}*" }
     - { state: present, name: "MariaDB-backup-{{ mariadb_version }}*" }
     - { state: latest, name: peer-finder }
   "11.4":
-    - { state: latest, name: boost-devel }
-    - { state: present, name: "MariaDB-server-{{ mariadb_version }}*" }
-    - { state: present, name: "MariaDB-backup-{{ mariadb_version }}*" }
-    - { state: latest, name: peer-finder }
-  "10.11":
     - { state: latest, name: boost-devel }
     - { state: present, name: "MariaDB-server-{{ mariadb_version }}*" }
     - { state: present, name: "MariaDB-backup-{{ mariadb_version }}*" }

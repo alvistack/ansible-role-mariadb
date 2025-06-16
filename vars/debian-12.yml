@@ -14,10 +14,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-_mariadb_release: "11.4"
+_mariadb_release: "11.8"
 
 _apt_key:
-  "11.7":
+  "12.0":
+    - url: http://mariadb.org/mariadb_release_signing_key.asc
+      dest: /etc/apt/keyrings/mariadb.asc
+      checksum: "sha256:00adb387f4c12e8982cfc28165d225695621494354cd58108c6845063bfb74b5"
+    - url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_12/Release.key
+      dest: /etc/apt/keyrings/home-alvistack.asc
+      checksum: "sha256:90b960d05e9c5f068f70a6afa1c2623c400312f4e719bd97719d85e49b7de2b2"
+  "11.8":
     - url: http://mariadb.org/mariadb_release_signing_key.asc
       dest: /etc/apt/keyrings/mariadb.asc
       checksum: "sha256:00adb387f4c12e8982cfc28165d225695621494354cd58108c6845063bfb74b5"
@@ -31,19 +38,30 @@ _apt_key:
     - url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_12/Release.key
       dest: /etc/apt/keyrings/home-alvistack.asc
       checksum: "sha256:90b960d05e9c5f068f70a6afa1c2623c400312f4e719bd97719d85e49b7de2b2"
-  "10.11":
-    - url: http://mariadb.org/mariadb_release_signing_key.asc
-      dest: /etc/apt/keyrings/mariadb.asc
-      checksum: "sha256:00adb387f4c12e8982cfc28165d225695621494354cd58108c6845063bfb74b5"
-    - url: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_12/Release.key
-      dest: /etc/apt/keyrings/home-alvistack.asc
-      checksum: "sha256:90b960d05e9c5f068f70a6afa1c2623c400312f4e719bd97719d85e49b7de2b2"
 
 _deb822_repository:
-  "11.7":
+  "12.0":
     - name: mariadb
       types: deb
-      uris: http://mirror.mariadb.org/repo/11.7/debian
+      uris: http://mirror.mariadb.org/repo/12.0/debian
+      suites: bookworm
+      components: main
+      signed_by: /etc/apt/keyrings/mariadb.asc
+      architectures: amd64
+      enabled: true
+      state: present
+    - name: home-alvistack
+      types: deb
+      uris: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_12
+      suites: /
+      components:
+      signed_by: /etc/apt/keyrings/home-alvistack.asc
+      enabled: true
+      state: present
+  "11.8":
+    - name: mariadb
+      types: deb
+      uris: http://mirror.mariadb.org/repo/11.8/debian
       suites: bookworm
       components: main
       signed_by: /etc/apt/keyrings/mariadb.asc
@@ -76,39 +94,21 @@ _deb822_repository:
       signed_by: /etc/apt/keyrings/home-alvistack.asc
       enabled: true
       state: present
-  "10.11":
-    - name: mariadb
-      types: deb
-      uris: http://mirror.mariadb.org/repo/10.11/debian
-      suites: bookworm
-      components: main
-      signed_by: /etc/apt/keyrings/mariadb.asc
-      architectures: amd64
-      enabled: true
-      state: present
-    - name: home-alvistack
-      types: deb
-      uris: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_12
-      suites: /
-      components:
-      signed_by: /etc/apt/keyrings/home-alvistack.asc
-      enabled: true
-      state: present
 
 _apt:
-  "11.7":
+  "12.0":
+    - { state: present, name: "mysql-common=1:{{ mariadb_version }}*" }
+    - { state: present, name: "mariadb-server=1:{{ mariadb_version }}*" }
+    - { state: present, name: "mariadb-backup=1:{{ mariadb_version }}*" }
+    - { state: latest, name: socat }
+    - { state: latest, name: peer-finder }
+  "11.8":
     - { state: present, name: "mysql-common=1:{{ mariadb_version }}*" }
     - { state: present, name: "mariadb-server=1:{{ mariadb_version }}*" }
     - { state: present, name: "mariadb-backup=1:{{ mariadb_version }}*" }
     - { state: latest, name: socat }
     - { state: latest, name: peer-finder }
   "11.4":
-    - { state: present, name: "mysql-common=1:{{ mariadb_version }}*" }
-    - { state: present, name: "mariadb-server=1:{{ mariadb_version }}*" }
-    - { state: present, name: "mariadb-backup=1:{{ mariadb_version }}*" }
-    - { state: latest, name: socat }
-    - { state: latest, name: peer-finder }
-  "10.11":
     - { state: present, name: "mysql-common=1:{{ mariadb_version }}*" }
     - { state: present, name: "mariadb-server=1:{{ mariadb_version }}*" }
     - { state: present, name: "mariadb-backup=1:{{ mariadb_version }}*" }
