@@ -1,0 +1,116 @@
+---
+
+# Copyright 2025 Wong Hoi Sing Edison <hswong3i@pantarei-design.com>
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+_mariadb_release: "11.8"
+
+_apt_key:
+  "12.0":
+    - url: https://mariadb.org/mariadb_release_signing_key.asc
+      dest: /etc/apt/keyrings/mariadb.asc
+      checksum: "sha256:00adb387f4c12e8982cfc28165d225695621494354cd58108c6845063bfb74b5"
+    - url: https://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_13/Release.key
+      dest: /etc/apt/keyrings/home-alvistack.asc
+      checksum: "sha256:90b960d05e9c5f068f70a6afa1c2623c400312f4e719bd97719d85e49b7de2b2"
+  "11.8":
+    - url: https://mariadb.org/mariadb_release_signing_key.asc
+      dest: /etc/apt/keyrings/mariadb.asc
+      checksum: "sha256:00adb387f4c12e8982cfc28165d225695621494354cd58108c6845063bfb74b5"
+    - url: https://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_13/Release.key
+      dest: /etc/apt/keyrings/home-alvistack.asc
+      checksum: "sha256:90b960d05e9c5f068f70a6afa1c2623c400312f4e719bd97719d85e49b7de2b2"
+  "11.4":
+    - url: https://mariadb.org/mariadb_release_signing_key.asc
+      dest: /etc/apt/keyrings/mariadb.asc
+      checksum: "sha256:00adb387f4c12e8982cfc28165d225695621494354cd58108c6845063bfb74b5"
+    - url: https://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_13/Release.key
+      dest: /etc/apt/keyrings/home-alvistack.asc
+      checksum: "sha256:90b960d05e9c5f068f70a6afa1c2623c400312f4e719bd97719d85e49b7de2b2"
+
+_deb822_repository:
+  "12.0":
+    - name: mariadb
+      types: deb
+      uris: https://mirror.mariadb.org/repo/12.0/debian
+      suites: sid
+      components: main
+      signed_by: /etc/apt/keyrings/mariadb.asc
+      architectures: amd64
+      enabled: true
+      state: present
+    - name: home-alvistack
+      types: deb
+      uris: https://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_13
+      suites: /
+      components:
+      signed_by: /etc/apt/keyrings/home-alvistack.asc
+      enabled: true
+      state: present
+  "11.8":
+    - name: mariadb
+      types: deb
+      uris: https://mirror.mariadb.org/repo/11.8/debian
+      suites: sid
+      components: main
+      signed_by: /etc/apt/keyrings/mariadb.asc
+      architectures: amd64
+      enabled: true
+      state: present
+    - name: home-alvistack
+      types: deb
+      uris: https://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_13
+      suites: /
+      components:
+      signed_by: /etc/apt/keyrings/home-alvistack.asc
+      enabled: true
+      state: present
+  "11.4":
+    - name: mariadb
+      types: deb
+      uris: https://mirror.mariadb.org/repo/11.4/debian
+      suites: sid
+      components: main
+      signed_by: /etc/apt/keyrings/mariadb.asc
+      architectures: amd64
+      enabled: true
+      state: present
+    - name: home-alvistack
+      types: deb
+      uris: https://downloadcontent.opensuse.org/repositories/home:/alvistack/Debian_13
+      suites: /
+      components:
+      signed_by: /etc/apt/keyrings/home-alvistack.asc
+      enabled: true
+      state: present
+
+_apt:
+  "12.0":
+    - { state: present, name: "mysql-common=1:{{ mariadb_version }}*" }
+    - { state: present, name: "mariadb-server=1:{{ mariadb_version }}*" }
+    - { state: present, name: "mariadb-backup=1:{{ mariadb_version }}*" }
+    - { state: latest, name: socat }
+    - { state: latest, name: peer-finder }
+  "11.8":
+    - { state: present, name: "mysql-common=1:{{ mariadb_version }}*" }
+    - { state: present, name: "mariadb-server=1:{{ mariadb_version }}*" }
+    - { state: present, name: "mariadb-backup=1:{{ mariadb_version }}*" }
+    - { state: latest, name: socat }
+    - { state: latest, name: peer-finder }
+  "11.4":
+    - { state: present, name: "mysql-common=1:{{ mariadb_version }}*" }
+    - { state: present, name: "mariadb-server=1:{{ mariadb_version }}*" }
+    - { state: present, name: "mariadb-backup=1:{{ mariadb_version }}*" }
+    - { state: latest, name: socat }
+    - { state: latest, name: peer-finder }
