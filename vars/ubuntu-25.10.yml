@@ -17,7 +17,7 @@
 _mariadb_release: "11.8"
 
 _apt_key:
-  "12.0":
+  "12.1":
     - url: http://mariadb.org/mariadb_release_signing_key.asc
       dest: /etc/apt/keyrings/mariadb.asc
       checksum: "sha256:00adb387f4c12e8982cfc28165d225695621494354cd58108c6845063bfb74b5"
@@ -40,10 +40,10 @@ _apt_key:
       checksum: "sha256:2959bf5709615cba0109715e4c2001066a4536398fa54f0f602abc208f04017e"
 
 _deb822_repository:
-  "12.0":
+  "12.1":
     - name: mariadb
       types: deb
-      uris: http://mirror.mariadb.org/repo/12.0/ubuntu
+      uris: http://mirror.mariadb.org/repo/12.1/ubuntu
       suites: questing
       components: main
       signed_by: /etc/apt/keyrings/mariadb.asc
@@ -96,7 +96,7 @@ _deb822_repository:
       state: present
 
 _apt:
-  "12.0":
+  "12.1":
     - { state: present, name: "mysql-common=1:{{ mariadb_version }}*" }
     - { state: present, name: "mariadb-server=1:{{ mariadb_version }}*" }
     - { state: present, name: "mariadb-backup=1:{{ mariadb_version }}*" }
