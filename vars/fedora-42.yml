@@ -1,6 +1,6 @@
 ---
 
-# Copyright 2025 Wong Hoi Sing Edison <hswong3i@pantarei-design.com>
+# Copyright 2026 Wong Hoi Sing Edison <hswong3i@pantarei-design.com>
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,7 +17,7 @@
 _mariadb_release: "11.8"
 
 _rpm_key:
-  "12.0":
+  "12.1":
     - key: http://mirror.mariadb.org/yum/RPM-GPG-KEY-MariaDB
       fingerprint: 199369E5404BD5FC7D2FE43BCBCB082A1BB943DB
       state: present
@@ -40,11 +40,11 @@ _rpm_key:
       state: present
 
 _yum_repository:
-  "12.0":
+  "12.1":
     - file: mariadb
       name: mariadb
       description: MariaDB
-      baseurl: http://mirror.mariadb.org/yum/12.0/fedora40-amd64
+      baseurl: http://mirror.mariadb.org/yum/12.1/fedora42-amd64
       enabled: true
       priority: "2"
       module_hotfixes: true
@@ -65,7 +65,7 @@ _yum_repository:
     - file: mariadb
       name: mariadb
       description: MariaDB
-      baseurl: http://mirror.mariadb.org/yum/11.8/fedora40-amd64
+      baseurl: http://mirror.mariadb.org/yum/11.8/fedora42-amd64
       enabled: true
       priority: "2"
       module_hotfixes: true
@@ -86,7 +86,7 @@ _yum_repository:
     - file: mariadb
       name: mariadb
       description: MariaDB
-      baseurl: http://mirror.mariadb.org/yum/11.4/fedora40-amd64
+      baseurl: http://mirror.mariadb.org/yum/11.4/fedora42-amd64
       enabled: true
       priority: "2"
       module_hotfixes: true
@@ -105,7 +105,7 @@ _yum_repository:
       state: present
 
 _yum:
-  "12.0":
+  "12.1":
     - { state: latest, name: boost-devel }
     - { state: present, name: "MariaDB-server-{{ mariadb_version }}*" }
     - { state: present, name: "MariaDB-backup-{{ mariadb_version }}*" }
