@@ -21,21 +21,21 @@ _rpm_key:
     - key: http://mirror.mariadb.org/yum/RPM-GPG-KEY-MariaDB
       fingerprint: 199369E5404BD5FC7D2FE43BCBCB082A1BB943DB
       state: present
-    - key: http://download.opensuse.org/repositories/home:/alvistack/CentOS_7/repodata/repomd.xml.key
+    - key: http://download.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_16.0/repodata/repomd.xml.key
       fingerprint: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
       state: present
   "11.8":
     - key: http://mirror.mariadb.org/yum/RPM-GPG-KEY-MariaDB
       fingerprint: 199369E5404BD5FC7D2FE43BCBCB082A1BB943DB
       state: present
-    - key: http://download.opensuse.org/repositories/home:/alvistack/CentOS_7/repodata/repomd.xml.key
+    - key: http://download.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_16.0/repodata/repomd.xml.key
       fingerprint: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
       state: present
   "11.4":
     - key: http://mirror.mariadb.org/yum/RPM-GPG-KEY-MariaDB
       fingerprint: 199369E5404BD5FC7D2FE43BCBCB082A1BB943DB
       state: present
-    - key: http://download.opensuse.org/repositories/home:/alvistack/CentOS_7/repodata/repomd.xml.key
+    - key: http://download.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_16.0/repodata/repomd.xml.key
       fingerprint: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
       state: present
 
@@ -44,79 +44,79 @@ _yum_repository:
     - file: mariadb
       name: mariadb
       description: MariaDB
-      baseurl: http://mirror.mariadb.org/yum/12.1/rhel7-amd64
+      baseurl: http://mirror.mariadb.org/yum/12.1/opensuse156-amd64
       enabled: true
       priority: "2"
       module_hotfixes: true
       gpgcheck: true
       gpgkey: http://mirror.mariadb.org/yum/RPM-GPG-KEY-MariaDB
       state: present
-    - file: home:alvistack
+    - file: home_alvistack
       name: home_alvistack
-      description: home:alvistack (CentOS_7)
-      baseurl: http://download.opensuse.org/repositories/home:/alvistack/CentOS_7
+      description: home:alvistack (openSUSE_Leap_16.0)
+      baseurl: http://download.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_16.0
       enabled: true
       priority: "2"
       module_hotfixes: true
       gpgcheck: true
-      gpgkey: http://download.opensuse.org/repositories/home:/alvistack/CentOS_7/repodata/repomd.xml.key
+      gpgkey: http://download.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_16.0/repodata/repomd.xml.key
       state: present
   "11.8":
     - file: mariadb
       name: mariadb
       description: MariaDB
-      baseurl: http://mirror.mariadb.org/yum/11.8/rhel7-amd64
+      baseurl: http://mirror.mariadb.org/yum/11.8/opensuse156-amd64
       enabled: true
       priority: "2"
       module_hotfixes: true
       gpgcheck: true
       gpgkey: http://mirror.mariadb.org/yum/RPM-GPG-KEY-MariaDB
       state: present
-    - file: home:alvistack
+    - file: home_alvistack
       name: home_alvistack
-      description: home:alvistack (CentOS_7)
-      baseurl: http://download.opensuse.org/repositories/home:/alvistack/CentOS_7
+      description: home:alvistack (openSUSE_Leap_16.0)
+      baseurl: http://download.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_16.0
       enabled: true
       priority: "2"
       module_hotfixes: true
       gpgcheck: true
-      gpgkey: http://download.opensuse.org/repositories/home:/alvistack/CentOS_7/repodata/repomd.xml.key
+      gpgkey: http://download.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_16.0/repodata/repomd.xml.key
       state: present
   "11.4":
     - file: mariadb
       name: mariadb
       description: MariaDB
-      baseurl: http://mirror.mariadb.org/yum/11.4/rhel7-amd64
+      baseurl: http://mirror.mariadb.org/yum/11.4/opensuse156-amd64
       enabled: true
       priority: "2"
       module_hotfixes: true
       gpgcheck: true
       gpgkey: http://mirror.mariadb.org/yum/RPM-GPG-KEY-MariaDB
       state: present
-    - file: home:alvistack
+    - file: home_alvistack
       name: home_alvistack
-      description: home:alvistack (CentOS_7)
-      baseurl: http://download.opensuse.org/repositories/home:/alvistack/CentOS_7
+      description: home:alvistack (openSUSE_Leap_16.0)
+      baseurl: http://download.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_16.0
       enabled: true
       priority: "2"
       module_hotfixes: true
       gpgcheck: true
-      gpgkey: http://download.opensuse.org/repositories/home:/alvistack/CentOS_7/repodata/repomd.xml.key
+      gpgkey: http://download.opensuse.org/repositories/home:/alvistack/openSUSE_Leap_16.0/repodata/repomd.xml.key
       state: present
 
-_yum:
+_zypper:
   "12.1":
     - { state: latest, name: boost-devel }
-    - { state: present, name: "MariaDB-server-{{ mariadb_version }}*" }
-    - { state: present, name: "MariaDB-backup-{{ mariadb_version }}*" }
+    - { state: present, name: "MariaDB-server-{{ mariadb_version }}" }
+    - { state: present, name: "MariaDB-backup-{{ mariadb_version }}" }
     - { state: latest, name: peer-finder }
   "11.8":
     - { state: latest, name: boost-devel }
-    - { state: present, name: "MariaDB-server-{{ mariadb_version }}*" }
-    - { state: present, name: "MariaDB-backup-{{ mariadb_version }}*" }
+    - { state: present, name: "MariaDB-server-{{ mariadb_version }}" }
+    - { state: present, name: "MariaDB-backup-{{ mariadb_version }}" }
     - { state: latest, name: peer-finder }
   "11.4":
     - { state: latest, name: boost-devel }
-    - { state: present, name: "MariaDB-server-{{ mariadb_version }}*" }
-    - { state: present, name: "MariaDB-backup-{{ mariadb_version }}*" }
+    - { state: present, name: "MariaDB-server-{{ mariadb_version }}" }
+    - { state: present, name: "MariaDB-backup-{{ mariadb_version }}" }
     - { state: latest, name: peer-finder }
