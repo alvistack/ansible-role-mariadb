@@ -44,7 +44,7 @@ _deb822_repository:
     - name: mariadb
       types: deb
       uris: http://mirror.mariadb.org/repo/12.2/ubuntu
-      suites: resolute
+      suites: questing
       components: main
       signed_by: /etc/apt/keyrings/mariadb.asc
       architectures: amd64
@@ -62,7 +62,7 @@ _deb822_repository:
     - name: mariadb
       types: deb
       uris: http://mirror.mariadb.org/repo/11.8/ubuntu
-      suites: resolute
+      suites: questing
       components: main
       signed_by: /etc/apt/keyrings/mariadb.asc
       architectures: amd64
@@ -80,7 +80,7 @@ _deb822_repository:
     - name: mariadb
       types: deb
       uris: http://mirror.mariadb.org/repo/11.4/ubuntu
-      suites: resolute
+      suites: questing
       components: main
       signed_by: /etc/apt/keyrings/mariadb.asc
       architectures: amd64
