@@ -104,7 +104,7 @@ _yum_repository:
       gpgkey: http://downloadcontent.opensuse.org/repositories/home:/alvistack/Fedora_43/repodata/repomd.xml.key
       state: present
 
-_yum:
+_dnf:
   "12.2":
     - { state: latest, name: boost-devel }
     - { state: present, name: "MariaDB-server-{{ mariadb_version }}*" }
