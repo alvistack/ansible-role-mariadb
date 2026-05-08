@@ -16,7 +16,8 @@
 
 _mariadb_release: "11.8"
 
-_rpm_key:
+_rpm_key: "{{ __rpm_key[mariadb_release] }}"
+__rpm_key:
   "12.2":
     - key: https://mirror.mariadb.org/yum/RPM-GPG-KEY-MariaDB
       fingerprint: 199369E5404BD5FC7D2FE43BCBCB082A1BB943DB
@@ -39,7 +40,8 @@ _rpm_key:
       fingerprint: 789CFFDE0295B8A1F4E5690C4BECC97550D0B1FD
       state: present
 
-_yum_repository:
+_yum_repository: "{{ __yum_repository[mariadb_release] }}"
+__yum_repository:
   "12.2":
     - file: mariadb
       name: mariadb
@@ -104,7 +106,8 @@ _yum_repository:
       gpgkey: https://downloadcontent.opensuse.org/repositories/home:/alvistack/Fedora_Rawhide/repodata/repomd.xml.key
       state: present
 
-_dnf:
+_dnf: "{{ __dnf[mariadb_release] }}"
+__dnf:
   "12.2":
     - { state: latest, name: boost-devel }
     - { state: present, name: "MariaDB-server-{{ mariadb_version }}*" }

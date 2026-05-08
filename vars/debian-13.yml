@@ -16,7 +16,8 @@
 
 _mariadb_release: "11.8"
 
-_apt_key:
+_apt_key: "{{ __apt_key[mariadb_release] }}"
+__apt_key:
   "12.2":
     - url: https://mariadb.org/mariadb_release_signing_key.asc
       dest: /etc/apt/keyrings/mariadb.asc
@@ -39,7 +40,8 @@ _apt_key:
       dest: /etc/apt/keyrings/home-alvistack.asc
       checksum: "sha256:2959bf5709615cba0109715e4c2001066a4536398fa54f0f602abc208f04017e"
 
-_deb822_repository:
+_deb822_repository: "{{ __deb822_repository[mariadb_release] }}"
+__deb822_repository:
   "12.2":
     - name: mariadb
       types: deb
@@ -95,7 +97,8 @@ _deb822_repository:
       enabled: true
       state: present
 
-_apt:
+_apt: "{{ __apt[mariadb_release] }}"
+__apt:
   "12.2":
     - { state: present, name: "mysql-common=1:{{ mariadb_version }}*" }
     - { state: present, name: "mariadb-server=1:{{ mariadb_version }}*" }
