@@ -18,4 +18,4 @@
 mariadb_release: "{{ _mariadb_release }}"
 
 # MariaDB version.
-mariadb_version: "{{ _mariadb_version[mariadb_release] }}"
+mariadb_version: "{{ _mariadb_version }}"
