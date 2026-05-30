@@ -16,6 +16,6 @@
 
 _mariadb_version: "{{ __mariadb_version[mariadb_release] }}"
 __mariadb_version:
-  "12.2": 12.2.2
-  "11.8": 11.8.7
-  "11.4": 11.4.11
+  "12.3": 12.3.2
+  "11.8": 11.8.8
+  "11.4": 11.4.12
