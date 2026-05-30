@@ -18,7 +18,7 @@ _mariadb_release: "11.8"
 
 _rpm_key: "{{ __rpm_key[mariadb_release] }}"
 __rpm_key:
-  "12.2":
+  "12.3":
     - key: http://mirror.mariadb.org/yum/RPM-GPG-KEY-MariaDB
       fingerprint: 199369E5404BD5FC7D2FE43BCBCB082A1BB943DB
       state: present
@@ -42,11 +42,11 @@ __rpm_key:
 
 _yum_repository: "{{ __yum_repository[mariadb_release] }}"
 __yum_repository:
-  "12.2":
+  "12.3":
     - file: mariadb
       name: mariadb
       description: MariaDB
-      baseurl: http://mirror.mariadb.org/yum/12.2/rhel7-amd64
+      baseurl: http://mirror.mariadb.org/yum/12.3/rhel7-amd64
       enabled: true
       priority: "2"
       module_hotfixes: true
@@ -108,7 +108,7 @@ __yum_repository:
 
 _yum: "{{ __yum[mariadb_release] }}"
 __yum:
-  "12.2":
+  "12.3":
     - { state: latest, name: boost-devel }
     - { state: present, name: "MariaDB-server-{{ mariadb_version }}*" }
     - { state: present, name: "MariaDB-backup-{{ mariadb_version }}*" }
